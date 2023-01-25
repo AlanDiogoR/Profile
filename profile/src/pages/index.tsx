@@ -1,5 +1,11 @@
+import { FaLinkedin } from 'react-icons/fa';
+import { BsInstagram } from 'react-icons/bs';
+
 export default function Home() {
   return (
-    <h1>Oi</h1>
+    <>
+      <FaLinkedin/>
+      <BsInstagram/>
+    </>
   )
 }
