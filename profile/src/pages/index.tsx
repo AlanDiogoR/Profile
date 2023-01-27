@@ -32,7 +32,7 @@ export default function Home() {
       </nav>
 
       <div>
-        alan diogo
+        alan diogo SKJ
       </div>
     </>
   )
