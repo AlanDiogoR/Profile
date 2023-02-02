@@ -30,10 +30,6 @@ export default function Home() {
           <li>Fale Conosco</li>
         </ul>
       </nav>
-      <p>a</p>
-      <p>a</p>
-      <p>a</p>
-      <p><a href="a">dkow</a></p>
     </>
   )
 }
