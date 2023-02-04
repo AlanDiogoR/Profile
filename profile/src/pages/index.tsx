@@ -28,9 +28,16 @@ export default function Home() {
           <li>O que eu faço</li>
           <li>Portifólio</li>
           <li>Fale Conosco</li>
-          <p>dskd</p>
         </ul>
       </nav>
+      <p>gh</p>
+      <p>hg</p>
+      <p>hg</p>
+      <p>g</p>
+      <p>g</p>
+      <p>hg</p>
+      <p>hg</p>
+      <p>hg hg  h</p>
     </>
   )
 }
