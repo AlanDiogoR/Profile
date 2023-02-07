@@ -30,6 +30,7 @@ export default function Home() {
           <li>Fale Conosco</li>
         </ul>
       </nav>
+      <p>Hi!</p>
 
     </>
   )
