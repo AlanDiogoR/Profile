@@ -1,37 +1,46 @@
-import { FaLinkedin } from 'react-icons/fa';
-import { BsInstagram } from 'react-icons/bs';
-import { BsGithub } from 'react-icons/bs';
-import Link from 'next/link';
+import Head from 'next/head';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Skills from '../components/Skills';
+import Timeline from '../components/Timeline';
+import FeaturedProjects from '../components/FeaturedProjects';
+import Contact from '../components/Contact';
+import { bio } from '../data/bio';
+import { siteUrl } from '../config';
+
+const pageTitle = 'Alan Diogo | Desenvolvedor Full Stack';
+const pageDescription = bio.headline;
 
 export default function Home() {
   return (
     <>
-      <Link href={"https://www.instagram.com/alandiogorb/"}>
-        <BsInstagram/>
-      </Link>
-      <Link href={"https://www.linkedin.com/in/alan-diogo-carvalho-54a6aa260/"}>
-        <FaLinkedin/>
-      </Link>
-      <Link href={"https://github.com/AlanDiogoR"}>
-        <BsGithub/>
-      </Link>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-      <div>
-        <span>Contao</span>
-        <h1>(14) 998931883</h1>
-      </div>
+        {/* Open Graph */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={`${siteUrl}/images/grivy/1.PNG`} />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:type" content="website" />
 
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>Quem eu sou</li>
-          <li>O que eu faço</li>
-          <li>Portifólio</li>
-          <li>Fale Conosco</li>
-        </ul>
-      </nav>
-      <p>Hi!</p>
-
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+      </Head>
+      <Header />
+      <main className="font-sans">
+        <Hero />
+        <About />
+        <Skills />
+        <Timeline />
+        <FeaturedProjects />
+        <Contact />
+      </main>
     </>
-  )
+  );
 }
