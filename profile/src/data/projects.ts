@@ -40,7 +40,7 @@ export const projects: Project[] = [
       'Desafio Ignite — aplicação de delivery de cafés com carrinho e checkout.',
     techStack: ['React', 'TypeScript', 'Styled Components'],
     link: 'https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/Coffe%20Delivery',
-    image: '/images/coffe%20delivery/1.PNG',
+    image: '/images/coffe-delivery/1.PNG',
     year: '2023',
   },
   {
@@ -50,7 +50,7 @@ export const projects: Project[] = [
       'Timer estilo Pomodoro para gestão de tarefas e ciclos de foco.',
     techStack: ['React', 'TypeScript', 'React Hook Form'],
     link: 'https://github.com/AlanDiogoR/Rocketseat-challenge',
-    image: '/images/ignite%20timer/1.PNG',
+    image: '/images/ignite-timer/1.PNG',
     year: '2023',
   },
   {

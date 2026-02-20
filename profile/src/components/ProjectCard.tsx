@@ -25,7 +25,7 @@ export default function ProjectCard({ project, index, isInView }: ProjectCardPro
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          unoptimized={project.image.startsWith('http')}
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark-950 to-transparent opacity-80" />
       </div>
