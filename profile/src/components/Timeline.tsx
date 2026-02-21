@@ -9,7 +9,7 @@ const typeColors: Record<string, string> = {
 };
 
 export default function Timeline() {
-  const [ref, isInView] = useInView<HTMLElement>({ once: true, margin: '-80px' });
+  const [ref, isInView] = useInView<HTMLElement>({ once: true, margin: '-80px', mobileMargin: '0px' });
 
   const transitionClass = 'transition-all duration-500';
   const visibleClass = isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4';

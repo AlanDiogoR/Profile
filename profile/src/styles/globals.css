@@ -12,6 +12,45 @@
   --color-accent-indigo: #6366f1;
 }
 
+/* ── Light theme ──────────────────────────────────────── */
+[data-theme="light"] {
+  --color-bg: #f8fafc;
+  --color-bg-elevated: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+  --color-accent-purple: #7c3aed;
+  --color-accent-indigo: #6366f1;
+}
+
+/* Substituições das classes Tailwind dark-* no tema claro */
+[data-theme="light"] .bg-dark-950        { background-color: #f8fafc; }
+[data-theme="light"] .bg-dark-950\/90    { background-color: rgba(248,250,252,0.9); }
+[data-theme="light"] .bg-dark-900        { background-color: #f1f5f9; }
+[data-theme="light"] .bg-dark-900\/50    { background-color: rgba(241,245,249,0.5); }
+[data-theme="light"] .bg-dark-800        { background-color: #e2e8f0; }
+[data-theme="light"] .bg-dark-700        { background-color: #e2e8f0; }
+[data-theme="light"] .border-dark-950   { border-color: #e2e8f0; }
+[data-theme="light"] .border-dark-800   { border-color: #cbd5e1; }
+[data-theme="light"] .border-dark-700   { border-color: #94a3b8; }
+[data-theme="light"] .border-dark-600   { border-color: #94a3b8; }
+[data-theme="light"] .ring-dark-950     { --tw-ring-color: #f8fafc; }
+
+/* Gradiente do overlay de imagem nos cards de projeto */
+[data-theme="light"] .from-dark-950 {
+  --tw-gradient-from: #f8fafc var(--tw-gradient-from-position);
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to, rgba(248,250,252,0));
+}
+
+/* Linha da timeline */
+[data-theme="light"] .via-dark-700 {
+  --tw-gradient-via: #cbd5e1 var(--tw-gradient-via-position);
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-via),
+    var(--tw-gradient-to, rgba(203,213,225,0));
+}
+
 html {
   font-display: swap;
   scroll-behavior: smooth;

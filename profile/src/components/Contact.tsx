@@ -4,7 +4,7 @@ import { contact, portfolioRepoUrl } from '../data/contact';
 import { socialIconMap } from '../utils/socialIcons';
 
 export default function Contact() {
-  const [ref, isInView] = useInView<HTMLElement>({ once: true, margin: '-100px' });
+  const [ref, isInView] = useInView<HTMLElement>({ once: true, margin: '-100px', mobileMargin: '0px' });
 
   const transitionClass = 'transition-all duration-500';
   const visibleClass = isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5';

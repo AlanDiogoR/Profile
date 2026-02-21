@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { HiMenu, HiX } from 'react-icons/hi';
+import { HiMenu, HiX, HiSun, HiMoon } from 'react-icons/hi';
 import { contact } from '../data/contact';
 import { socialIconMap } from '../utils/socialIcons';
+import { useTheme } from '../contexts/ThemeContext';
 
 const navItems = [
   { id: 'hero', label: 'Home' },
@@ -15,6 +16,7 @@ const navItems = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -61,6 +63,13 @@ export default function Header() {
               </a>
             );
           })}
+          <button
+            onClick={toggleTheme}
+            aria-label={theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'}
+            className="text-[var(--color-text-muted)] hover:text-accent-purple transition-colors p-1 focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
+          >
+            {theme === 'dark' ? <HiSun size={20} /> : <HiMoon size={20} />}
+          </button>
         </div>
 
         <button
@@ -95,7 +104,7 @@ export default function Header() {
               {item.label}
             </button>
           ))}
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             {contact.links.map(({ name, url, icon }) => {
               const Icon = socialIconMap[icon as keyof typeof socialIconMap];
               return (
@@ -111,6 +120,13 @@ export default function Header() {
                 </a>
               );
             })}
+            <button
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'}
+              className="text-[var(--color-text-muted)] hover:text-accent-purple transition-colors focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
+            >
+              {theme === 'dark' ? <HiSun size={28} /> : <HiMoon size={28} />}
+            </button>
           </div>
         </div>
       )}

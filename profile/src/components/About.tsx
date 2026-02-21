@@ -2,7 +2,7 @@ import { useInView } from '../hooks/useInView';
 import { bio } from '../data/bio';
 
 export default function About() {
-  const [ref, isInView] = useInView<HTMLElement>({ once: true, margin: '-100px' });
+  const [ref, isInView] = useInView<HTMLElement>({ once: true, margin: '-100px', mobileMargin: '0px' });
 
   return (
     <section

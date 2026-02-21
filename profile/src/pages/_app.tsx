@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import { Space_Grotesk } from 'next/font/google';
 import '../styles/globals.css';
+import { ThemeProvider } from '../contexts/ThemeContext';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -10,8 +11,10 @@ const spaceGrotesk = Space_Grotesk({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${spaceGrotesk.variable} font-sans`}>
-      <Component {...pageProps} />
-    </div>
+    <ThemeProvider>
+      <div className={`${spaceGrotesk.variable} font-sans`}>
+        <Component {...pageProps} />
+      </div>
+    </ThemeProvider>
   );
 }
