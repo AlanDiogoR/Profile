@@ -25,6 +25,17 @@ export const projects: Project[] = [
   },
   {
     id: '3',
+    title: 'CodeLeap',
+    description:
+      'Desafio frontend CodeLeap em produção. CRUD de posts com paginação, criação, edição e exclusão. Interface responsiva e integração com API REST.',
+    techStack: ['React', 'TypeScript', 'Vite', 'CSS Modules'],
+    link: 'https://github.com/AlanDiogoR/codeleap-challenge',
+    image: '/images/codeLeadp/img.PNG',
+    year: '2024',
+    inProduction: true,
+  },
+  {
+    id: '4',
     title: 'Verdan Shopping',
     description:
       'Plataforma e-commerce do TCC (Etec). Desenvolvimento focado em UX, backend, frontend e integrações.',
@@ -34,7 +45,7 @@ export const projects: Project[] = [
     year: '2023',
   },
   {
-    id: '4',
+    id: '5',
     title: 'Coffee Delivery',
     description:
       'Desafio Ignite — aplicação de delivery de cafés com carrinho e checkout.',
@@ -44,7 +55,7 @@ export const projects: Project[] = [
     year: '2023',
   },
   {
-    id: '5',
+    id: '6',
     title: 'Ignite Timer',
     description:
       'Timer estilo Pomodoro para gestão de tarefas e ciclos de foco.',
@@ -54,7 +65,7 @@ export const projects: Project[] = [
     year: '2023',
   },
   {
-    id: '6',
+    id: '7',
     title: 'Todo List',
     description:
       'Lista de tarefas com gerenciamento de estado e persistência.',
@@ -64,7 +75,7 @@ export const projects: Project[] = [
     year: '2023',
   },
   {
-    id: '7',
+    id: '8',
     title: 'iShop',
     description:
       'Projeto de e-commerce ou interface de loja.',
@@ -74,7 +85,7 @@ export const projects: Project[] = [
     year: '2022',
   },
   {
-    id: '8',
+    id: '9',
     title: 'ICall',
     description:
       'Aplicação de chamadas ou comunicação.',
