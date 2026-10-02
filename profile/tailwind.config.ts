@@ -1,28 +1,28 @@
 import type { Config } from 'tailwindcss'
 
+const v = (name: string) => `rgb(var(--${name}) / <alpha-value>)`
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/hooks/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        dark: {
-          950: '#0d1117',
-          900: '#161b22',
-          800: '#21262d',
-          700: '#30363d',
-          600: '#484f58',
-        },
-        accent: {
-          purple: '#7c3aed',
-          indigo: '#6366f1',
-        },
+        bg: v('bg'),
+        surface: v('surface'),
+        raised: v('raised'),
+        line: v('line'),
+        ink: v('ink'),
+        muted: v('muted'),
+        brand: v('brand'),
+        'on-brand': v('on-brand'),
+        accent: v('accent'),
       },
       fontFamily: {
-        sans: ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
       },
     },
   },

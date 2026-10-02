@@ -1,11 +1,17 @@
 export const bio = {
   name: 'Alan Diogo',
-  headline: 'Desenvolvedor Full Stack Junior — Cornélio Procópio, PR',
-  intro: "Desenvolvedor Full Stack júnior desde 2020. Trabalho com Node.js, React, Next.js, Vue, Spring Boot, React Native e TypeScript. Aplicações em produção como Grivy e Mood-Sharing.",
+  role: 'Desenvolvedor',
+  tagline:
+    'Desenvolvedor — landing pages, portfólios e automação de WhatsApp para pequenos negócios',
+  description:
+    'Alan Diogo, desenvolvedor e estudante de Engenharia de Software (UTFPR). Landing pages, portfólios e automação de WhatsApp para pequenos negócios. Aberto a vaga de programação e freelas.',
   about: [
-    "Desenvolvedor Full Stack júnior com sistemas financeiros (Grivy) e apps mobile (Mood-Sharing) em produção. Plataformas e-commerce e APIs REST com arquitetura limpa.",
-    "Formação: Análise e Desenvolvimento de Sistemas (Etec), Rocketseat (React, React Native, Node.js, Next.js), cursando Engenharia de Software (UTFPR).",
+    'Sou estudante de Engenharia de Software na UTFPR (Cornélio Procópio) e técnico em Análise e Desenvolvimento de Sistemas pela Etec.',
+    'Já construí sites e sistemas completos, do back-end ao front-end, inclusive para negócios locais da minha região. Hoje procuro uma vaga de programação e também atendo projetos freelance.',
   ],
-  formation: 'Técnico em Análise e Desenvolvimento de Sistemas (Etec)',
-  experience: 'Node.js, React, Next.js, Vue, Spring Boot, React Native, TypeScript, PostgreSQL, MongoDB',
+  education: [
+    { title: 'Engenharia de Software', place: 'UTFPR · Cornélio Procópio/PR', note: 'Cursando' },
+    { title: 'Técnico em Análise e Desenvolvimento de Sistemas', place: 'Etec' },
+  ],
+  stack: ['TypeScript', 'React', 'Next.js', 'Node.js', 'Java / Spring Boot', 'Vue', 'PostgreSQL', 'MongoDB', 'Tailwind CSS'],
 };

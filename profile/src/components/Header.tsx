@@ -1,134 +1,82 @@
 import { useState } from 'react';
-import Link from 'next/link';
 import { HiMenu, HiX, HiSun, HiMoon } from 'react-icons/hi';
+import { FaWhatsapp } from 'react-icons/fa';
 import { contact } from '../data/contact';
-import { socialIconMap } from '../utils/socialIcons';
 import { useTheme } from '../contexts/ThemeContext';
 
 const navItems = [
-  { id: 'hero', label: 'Home' },
-  { id: 'about', label: 'Sobre' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'timeline', label: 'Timeline' },
-  { id: 'projects', label: 'Projetos' },
-  { id: 'contact', label: 'Contato' },
+  { href: '#servicos', label: 'Serviços' },
+  { href: '#projetos', label: 'Projetos' },
+  { href: '#sobre', label: 'Sobre' },
+  { href: '#contato', label: 'Contato' },
 ];
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth' });
-    setMobileOpen(false);
-  };
+  const themeLabel = theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro';
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-dark-950/90 backdrop-blur-md border-b border-dark-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-        <Link
-          href="/"
-          className="font-semibold text-lg text-[var(--color-text)] hover:text-accent-purple transition-colors focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
-          onClick={() => scrollTo('hero')}
-        >
-          Alan Diogo
-        </Link>
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-line bg-bg/85 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        <a href="#inicio" className="font-display text-lg font-bold tracking-tight">
+          Alan<span className="text-brand">.</span>dev
+        </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav aria-label="Principal" className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors text-sm focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
-            >
+            <a key={item.href} href={item.href} className="text-sm text-muted transition-colors hover:text-ink">
               {item.label}
-            </button>
+            </a>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          {contact.links.map(({ name, url, icon }) => {
-            const Icon = socialIconMap[icon as keyof typeof socialIconMap];
-            return (
-              <a
-                key={name}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={name}
-                className="text-[var(--color-text-muted)] hover:text-accent-purple transition-colors p-1 focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
-              >
-                <Icon size={20} />
-              </a>
-            );
-          })}
+        <div className="flex items-center gap-1">
           <button
+            type="button"
             onClick={toggleTheme}
-            aria-label={theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'}
-            className="text-[var(--color-text-muted)] hover:text-accent-purple transition-colors p-1 focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
+            aria-label={themeLabel}
+            className="flex h-11 w-11 items-center justify-center rounded-lg text-muted transition-colors hover:text-ink"
           >
-            {theme === 'dark' ? <HiSun size={20} /> : <HiMoon size={20} />}
+            {theme === 'dark' ? <HiSun size={20} aria-hidden /> : <HiMoon size={20} aria-hidden />}
+          </button>
+          <a
+            href={contact.whatsappGeneral}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 hidden min-h-[40px] items-center gap-2 rounded-lg bg-brand px-4 text-sm font-semibold text-on-brand transition hover:brightness-110 md:inline-flex"
+          >
+            <FaWhatsapp size={16} aria-hidden /> WhatsApp
+          </a>
+          <button
+            type="button"
+            className="flex h-11 w-11 items-center justify-center rounded-lg md:hidden"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="menu-mobile"
+            aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+          >
+            {open ? <HiX size={24} aria-hidden /> : <HiMenu size={24} aria-hidden />}
           </button>
         </div>
-
-        <button
-          className="md:hidden p-2 text-[var(--color-text)] focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
-          onClick={() => setMobileOpen(true)}
-          aria-label="Abrir menu"
-        >
-          <HiMenu size={24} />
-        </button>
       </div>
 
-      {mobileOpen && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label="Menu de navegação"
-          className="fixed inset-0 bg-dark-950 z-50 md:hidden flex flex-col items-center justify-center gap-8 animate-fade-in-up"
-        >
-          <button
-            className="absolute top-4 right-4 p-2 text-[var(--color-text)] focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
-            onClick={() => setMobileOpen(false)}
-            aria-label="Fechar menu"
-          >
-            <HiX size={24} />
-          </button>
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollTo(item.id)}
-              className="text-xl text-[var(--color-text)] hover:text-accent-purple transition-colors focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
-            >
-              {item.label}
-            </button>
-          ))}
-          <div className="flex items-center gap-6">
-            {contact.links.map(({ name, url, icon }) => {
-              const Icon = socialIconMap[icon as keyof typeof socialIconMap];
-              return (
+      {open && (
+        <nav id="menu-mobile" aria-label="Principal (mobile)" className="border-t border-line bg-bg md:hidden">
+          <ul className="mx-auto max-w-6xl px-4 py-2 sm:px-6">
+            {navItems.map((item) => (
+              <li key={item.href}>
                 <a
-                  key={name}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={name}
-                  className="text-[var(--color-text-muted)] hover:text-accent-purple transition-colors focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block py-3 text-base text-ink"
                 >
-                  <Icon size={28} />
+                  {item.label}
                 </a>
-              );
-            })}
-            <button
-              onClick={toggleTheme}
-              aria-label={theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'}
-              className="text-[var(--color-text-muted)] hover:text-accent-purple transition-colors focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
-            >
-              {theme === 'dark' ? <HiSun size={28} /> : <HiMoon size={28} />}
-            </button>
-          </div>
-        </div>
+              </li>
+            ))}
+          </ul>
+        </nav>
       )}
     </header>
   );

@@ -1,97 +1,61 @@
-import type { Project } from '../types';
+export interface Project {
+  id: string;
+  title: string;
+  kind: string;
+  description: string;
+  stack: string[];
+  /** Imagem opcional (screenshot do site público). */
+  image?: string;
+  imageAlt?: string;
+  links: { label: string; url: string }[];
+}
 
+/** Somente links públicos. Não incluir repositórios privados nem URLs de checkout. */
 export const projects: Project[] = [
   {
-    id: '1',
+    id: 'bike-center',
+    title: 'Bike Center',
+    kind: 'E-commerce e site de loja local · Fartura/SP',
+    description:
+      'Plataforma para loja de bicicletas e motos: API REST, loja web e app mobile, com pedido de orçamento direto no WhatsApp.',
+    stack: ['Next.js', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'MongoDB', 'Tailwind CSS'],
+    image: '/images/projects/bike.webp',
+    imageAlt: 'Página inicial do site Bike Center, com fotos de bicicletas na loja e botões de WhatsApp',
+    links: [
+      { label: 'Ver site', url: 'https://bike-center-web.vercel.app' },
+      { label: 'Código', url: 'https://github.com/AlanDiogoR/bike-center' },
+    ],
+  },
+  {
+    id: 'grivy',
     title: 'Grivy',
+    kind: 'Controle financeiro pessoal',
     description:
-      'Sistema de controle financeiro pessoal em produção. Gestão de contas bancárias, transações, categorias e metas de economia. Arquitetura limpa com JWT e BCrypt.',
-    techStack: ['Vue 3', 'Nuxt 4', 'Spring Boot', 'PostgreSQL', 'Vuetify'],
-    link: 'https://github.com/AlanDiogoR/Desafio-Astrocode',
-    image: '/images/grivy/1.PNG',
-    year: '2024',
-    inProduction: true,
+      'App de finanças pessoais com contas, transações, categorias e metas de economia. Autenticação com JWT e arquitetura limpa no back-end.',
+    stack: ['Vue 3', 'Nuxt', 'Vuetify', 'Java', 'Spring Boot', 'PostgreSQL'],
+    image: '/images/projects/grivy.webp',
+    imageAlt: 'Página inicial do Grivy com a frase "Chega de não saber para onde vai o seu dinheiro" e um painel de contas',
+    links: [
+      { label: 'Ver site', url: 'https://grivy.netlify.app' },
+      { label: 'Código', url: 'https://github.com/AlanDiogoR/Desafio-Astrocode' },
+    ],
   },
   {
-    id: '2',
-    title: 'Mood-Sharing',
+    id: 'kabecao',
+    title: 'Kabeção Veículos',
+    kind: 'Linktree para revenda · Fartura/SP',
     description:
-      'App React Native em produção para casais compartilharem estados emocionais em tempo real. Exibe humor do parceiro na tela de bloqueio, geolocalização e notificações push.',
-    techStack: ['React Native', 'Node.js', 'MongoDB', 'JWT', 'Expo'],
-    link: 'https://github.com/AlanDiogoR/Mood-Sharing',
-    image: '/images/moodsharing/1.jpeg',
-    year: '2024',
-    inProduction: true,
+      'Landing page estilo Linktree focada em levar o cliente ao WhatsApp, com SEO local e testes automatizados.',
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vitest'],
+    links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/kabecao-veiculos' }],
   },
   {
-    id: '3',
-    title: 'CodeLeap',
+    id: 'utf',
+    title: 'UTF-Projetos',
+    kind: 'Formação · UTFPR',
     description:
-      'Desafio frontend CodeLeap em produção. CRUD de posts com paginação, criação, edição e exclusão. Interface responsiva e integração com API REST.',
-    techStack: ['React', 'TypeScript', 'Vite', 'CSS Modules'],
-    link: 'https://github.com/AlanDiogoR/codeleap-challenge',
-    image: '/images/codeLeadp/img.PNG',
-    year: '2024',
-    inProduction: true,
-  },
-  {
-    id: '4',
-    title: 'Verdan Shopping',
-    description:
-      'Plataforma e-commerce do TCC (Etec). Desenvolvimento focado em UX, backend, frontend e integrações.',
-    techStack: ['Next.js', 'Node.js', 'TypeScript', 'SCSS'],
-    link: 'https://github.com/AlanDiogoR/TCC',
-    image: '/images/verdan/1.webp',
-    year: '2023',
-  },
-  {
-    id: '5',
-    title: 'Coffee Delivery',
-    description:
-      'Desafio Ignite — aplicação de delivery de cafés com carrinho e checkout.',
-    techStack: ['React', 'TypeScript', 'Styled Components'],
-    link: 'https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/Coffe%20Delivery',
-    image: '/images/coffe-delivery/1.PNG',
-    year: '2023',
-  },
-  {
-    id: '6',
-    title: 'Ignite Timer',
-    description:
-      'Timer estilo Pomodoro para gestão de tarefas e ciclos de foco.',
-    techStack: ['React', 'TypeScript', 'React Hook Form'],
-    link: 'https://github.com/AlanDiogoR/Rocketseat-challenge',
-    image: '/images/ignite-timer/1.PNG',
-    year: '2023',
-  },
-  {
-    id: '7',
-    title: 'Todo List',
-    description:
-      'Lista de tarefas com gerenciamento de estado e persistência.',
-    techStack: ['React', 'TypeScript'],
-    link: 'https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/todo%20list',
-    image: '/images/todolist/1.PNG',
-    year: '2023',
-  },
-  {
-    id: '8',
-    title: 'iShop',
-    description:
-      'Projeto de e-commerce ou interface de loja.',
-    techStack: ['React', 'Node.js', 'TypeScript'],
-    link: 'https://github.com/AlanDiogoR/iShop',
-    image: '/images/iShop/1.PNG',
-    year: '2022',
-  },
-  {
-    id: '9',
-    title: 'ICall',
-    description:
-      'Aplicação de chamadas ou comunicação.',
-    techStack: ['React', 'Node.js'],
-    link: 'https://github.com/AlanDiogoR/ICall',
-    image: '/images/ICall/1.PNG',
-    year: '2022',
+      'Exercícios, listas, diagramas e projetos práticos do curso de Engenharia de Software, organizados por disciplina e período.',
+    stack: ['C', 'Algoritmos', 'Banco de dados'],
+    links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/UTF-Projetos' }],
   },
 ];
