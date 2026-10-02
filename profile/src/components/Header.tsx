@@ -5,9 +5,10 @@ import { contact } from '../data/contact';
 import { useTheme } from '../contexts/ThemeContext';
 
 const navItems = [
-  { href: '#servicos', label: 'Serviços' },
   { href: '#projetos', label: 'Projetos' },
-  { href: '#sobre', label: 'Sobre' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#timeline', label: 'Trajetória' },
+  { href: '#servicos', label: 'Serviços' },
   { href: '#contato', label: 'Contato' },
 ];
 

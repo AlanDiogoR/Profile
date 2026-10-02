@@ -17,20 +17,26 @@ export default function Hero() {
             {bio.name}
           </h1>
           <p className="rise rise-2 mt-4 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-            <span className="text-ink">Desenvolvedor</span> — landing pages, portfólios e automação de WhatsApp
-            para pequenos negócios.
+            <span className="text-ink">Desenvolvedor full stack</span> e estudante de Engenharia de Software na UTFPR.
+            Procuro minha vaga de programação e também faço sites e automação de WhatsApp para pequenos negócios.
           </p>
           <div className="rise rise-3 mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href={contact.whatsappGeneral} external>
+            <Button href="#projetos">Ver projetos</Button>
+            <Button href={contact.whatsappGeneral} variant="secondary" external>
               <FaWhatsapp size={18} aria-hidden /> Chamar no WhatsApp
             </Button>
-            <Button href="#projetos" variant="secondary">
-              Ver projetos
-            </Button>
-            <Button href="https://github.com/AlanDiogoR" variant="secondary" external>
-              <FaGithub size={18} aria-hidden /> GitHub
-            </Button>
           </div>
+          <p className="rise rise-3 mt-4 text-sm">
+            <a
+              href="https://github.com/AlanDiogoR"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[44px] items-center gap-2 font-semibold text-brand hover:underline"
+            >
+              <FaGithub size={18} aria-hidden /> github.com/AlanDiogoR
+              <span className="sr-only"> (abre em nova aba)</span>
+            </a>
+          </p>
         </div>
 
         <aside
@@ -41,17 +47,17 @@ export default function Hero() {
             <div>
               <dt className="mb-1 text-xs font-semibold uppercase tracking-wider text-accent">Formação</dt>
               <dd className="text-ink">Engenharia de Software · UTFPR</dd>
-              <dd className="text-muted">Técnico em Análise e Desenv. de Sistemas</dd>
+              <dd className="text-muted">Técnico em Informática e Desenv. de Sistemas (2020–2023)</dd>
             </div>
             <div>
-              <dt className="mb-1 text-xs font-semibold uppercase tracking-wider text-accent">Atuação</dt>
-              <dd className="text-ink">Fartura/SP e Cornélio Procópio/PR</dd>
-              <dd className="text-muted">Atendimento por WhatsApp</dd>
+              <dt className="mb-1 text-xs font-semibold uppercase tracking-wider text-accent">Disponível para</dt>
+              <dd className="text-ink">Vaga de programação</dd>
+              <dd className="text-muted">Projetos freelance, por WhatsApp</dd>
             </div>
             <div>
               <dt className="mb-2 text-xs font-semibold uppercase tracking-wider text-accent">Stack</dt>
               <dd className="flex flex-wrap gap-2">
-                {['TypeScript', 'React', 'Next.js', 'Node.js', 'Spring Boot'].map((t) => (
+                {['TypeScript', 'React', 'Next.js', 'Vue/Nuxt', 'Java', 'Spring Boot'].map((t) => (
                   <span key={t} className="rounded-md bg-raised px-2.5 py-1 text-xs text-ink">
                     {t}
                   </span>

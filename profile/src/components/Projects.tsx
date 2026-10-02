@@ -8,12 +8,12 @@ export default function Projects() {
     <Section
       id="projetos"
       eyebrow="Projetos"
-      title="Trabalhos reais, com código e site públicos"
-      intro="Negócios locais, produto próprio e a base acadêmica. Tudo abaixo você pode abrir e conferir."
+      title="Projetos reais, com código e site públicos"
+      intro="Produto próprio, negócios locais, segurança e a base acadêmica. Tudo abaixo você pode abrir e conferir."
     >
       <ul className="grid gap-6 md:grid-cols-2">
         {projects.map((p) => (
-          <li key={p.id} className="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface">
+          <li key={p.id} className="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface md:last:odd:col-span-2">
             {p.image ? (
               <div className="relative aspect-[8/5] w-full border-b border-line bg-raised">
                 <Image

@@ -10,7 +10,5 @@ export const contact = {
   ),
   links: [
     { name: 'GitHub', url: 'https://github.com/AlanDiogoR', icon: 'github' },
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/alandiogor/', icon: 'linkedin' },
-    { name: 'Instagram', url: 'https://www.instagram.com/alandiogorb/', icon: 'instagram' },
   ],
 } as const;

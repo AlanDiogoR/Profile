@@ -35,7 +35,7 @@ export const services: Service[] = [
     deadline: '2 a 3 dias úteis',
     items: [
       'Página de links ou portfólio sem depender de plataforma de terceiros',
-      'Bio, serviços/projetos, WhatsApp, Instagram e LinkedIn/GitHub',
+      'Bio, serviços/projetos, WhatsApp e links das suas redes',
       'Publicação em URL pública e orientação para usar na bio',
     ],
     whatsapp: whatsappLink(

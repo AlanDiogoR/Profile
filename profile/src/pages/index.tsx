@@ -3,7 +3,8 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import Projects from '../components/Projects';
-import About from '../components/About';
+import Skills from '../components/Skills';
+import Timeline from '../components/Timeline';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import WhatsAppFab from '../components/WhatsAppFab';
@@ -11,14 +12,14 @@ import { bio } from '../data/bio';
 import { contact } from '../data/contact';
 import { siteUrl } from '../config';
 
-const pageTitle = 'Alan Diogo | Desenvolvedor — landing pages, portfólios e automação de WhatsApp';
+const pageTitle = 'Alan Diogo | Desenvolvedor full stack — vaga de programação e freelas';
 const ogImage = `${siteUrl}/og.png`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: bio.name,
-  jobTitle: 'Desenvolvedor',
+  jobTitle: 'Desenvolvedor full stack',
   url: siteUrl,
   email: contact.email,
   sameAs: contact.links.map((l) => l.url),
@@ -41,7 +42,7 @@ export default function Home() {
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Alan Diogo — Desenvolvedor. Landing pages, portfólios e automação de WhatsApp" />
+        <meta property="og:image:alt" content="Alan Diogo — Desenvolvedor full stack. Disponível para vaga de programação e freelas" />
         <meta property="og:url" content={siteUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_BR" />
@@ -62,9 +63,10 @@ export default function Home() {
       <Header />
       <main id="conteudo">
         <Hero />
-        <Services />
         <Projects />
-        <About />
+        <Skills />
+        <Timeline />
+        <Services />
         <Contact />
       </main>
       <Footer />

@@ -17,8 +17,8 @@ export const projects: Project[] = [
     title: 'Bike Center',
     kind: 'E-commerce e site de loja local · Fartura/SP',
     description:
-      'Plataforma para loja de bicicletas e motos: API REST, loja web e app mobile, com pedido de orçamento direto no WhatsApp.',
-    stack: ['Next.js', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'MongoDB', 'Tailwind CSS'],
+      'Plataforma para loja de bicicletas e motos: API REST, loja web e app mobile em monorepo, com pedido de orçamento direto no WhatsApp.',
+    stack: ['Next.js', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'MongoDB', 'Expo', 'Docker'],
     image: '/images/projects/bike.webp',
     imageAlt: 'Página inicial do site Bike Center, com fotos de bicicletas na loja e botões de WhatsApp',
     links: [
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     kind: 'Controle financeiro pessoal',
     description:
       'App de finanças pessoais com contas, transações, categorias e metas de economia. Autenticação com JWT e arquitetura limpa no back-end.',
-    stack: ['Vue 3', 'Nuxt', 'Vuetify', 'Java', 'Spring Boot', 'PostgreSQL'],
+    stack: ['Vue 3', 'Nuxt', 'Vuetify', 'Java 21', 'Spring Boot', 'PostgreSQL'],
     image: '/images/projects/grivy.webp',
     imageAlt: 'Página inicial do Grivy com a frase "Chega de não saber para onde vai o seu dinheiro" e um painel de contas',
     links: [
@@ -48,6 +48,15 @@ export const projects: Project[] = [
       'Landing page estilo Linktree focada em levar o cliente ao WhatsApp, com SEO local e testes automatizados.',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vitest'],
     links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/kabecao-veiculos' }],
+  },
+  {
+    id: 'secomp',
+    title: 'Desafio SECOMP CyberSec',
+    kind: 'Segurança de aplicações · Educacional',
+    description:
+      'Laboratório de AppSec para a palestra de CyberSec da SECOMP: um banco propositalmente vulnerável em três linguagens, para praticar exploração (CTF) e correção de falhas web. Uso apenas em localhost.',
+    stack: ['Java', 'Python', 'C#', 'SQLite', 'AppSec'],
+    links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/Desafi-SECOMP_2026_CyberSec' }],
   },
   {
     id: 'utf',

@@ -74,8 +74,6 @@ profile/
 ## Links
 
 - [GitHub](https://github.com/AlanDiogoR)
-- [LinkedIn](https://www.linkedin.com/in/alandiogor/)
-- [Instagram](https://www.instagram.com/alandiogorb/)
 - [Repositório do portfólio](https://github.com/AlanDiogoR/Profile)
 
 ## Licença
