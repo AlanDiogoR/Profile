@@ -24,9 +24,9 @@ export const timeline: TimelineItem[] = [
     link: 'https://github.com/AlanDiogoR/TCC',
   },
   {
-    year: '2025',
-    title: 'Engenharia de Software · UTFPR',
-    description: 'Cursando em Cornélio Procópio/PR. Exercícios e projetos da graduação no UTF-Projetos.',
+    year: 'Atualmente',
+    title: 'Estudante de Engenharia de Software, UTFPR Cornélio Procópio',
+    description: 'Exercícios e projetos da graduação no UTF-Projetos.',
     type: 'education',
     link: 'https://github.com/AlanDiogoR/UTF-Projetos',
   },
