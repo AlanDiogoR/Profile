@@ -1,104 +1,48 @@
-import { useInView } from '../hooks/useInView';
+import { HiExternalLink } from 'react-icons/hi';
+import Section from './Section';
 import { timeline } from '../data/timeline';
 
-const typeColors: Record<string, string> = {
-  project: 'bg-accent-purple/20 text-accent-purple border-accent-purple/40',
-  education: 'bg-accent-indigo/20 text-accent-indigo border-accent-indigo/40',
-  work: 'bg-dark-700 text-[var(--color-text)] border-dark-600',
-  milestone: 'bg-green-500/20 text-green-400 border-green-500/40',
-};
+const labels = { education: 'Formação', project: 'Projeto' } as const;
 
 export default function Timeline() {
-  const [ref, isInView] = useInView<HTMLElement>({ once: true, margin: '-80px', mobileMargin: '0px' });
-
-  const transitionClass = 'transition-all duration-500';
-  const visibleClass = isInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4';
-
   return (
-    <section
+    <Section
       id="timeline"
-      ref={ref}
-      className="py-20 px-4 sm:px-6 bg-dark-950 scroll-mt-20"
+      eyebrow="Trajetória"
+      title="Formação e projetos, em ordem"
+      intro="Estudante de Engenharia de Software na UTFPR, com técnico em Informática e Desenvolvimento de Sistemas (2020–2023)."
     >
-      <div className="max-w-5xl mx-auto">
-        <h2
-          className={`text-3xl sm:text-4xl font-bold text-[var(--color-text)] mb-4 ${transitionClass} ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
-        >
-          Linha do tempo
-        </h2>
-        <p
-          className={`text-[var(--color-text-muted)] text-lg mb-12 ${transitionClass} ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
-          style={isInView ? { transitionDelay: '0.1s' } : {}}
-        >
-          Trajetória desde 2020 — projetos, formação e experiência.
-        </p>
-
-        <div className="relative">
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2 bg-gradient-to-b from-accent-purple via-dark-700 to-transparent" />
-          <div className="space-y-8">
-            {timeline.map((item, i) => {
-              const isLeft = i % 2 === 0;
-              const content = (
-                <div
-                  className={`flex-1 min-w-0 ${isLeft ? 'text-right pr-4 sm:pr-6' : 'text-left pl-4 sm:pl-6'}`}
+      <ol className="relative space-y-8 border-l-2 border-line pl-6 sm:pl-8">
+        {timeline.map((item) => (
+          <li key={`${item.year}-${item.title}`} className="relative">
+            <span
+              aria-hidden
+              className={`absolute -left-[33px] top-1.5 h-4 w-4 rounded-full border-2 border-bg sm:-left-[41px] ${item.type === 'education' ? 'bg-accent' : 'bg-brand'}`}
+            />
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-mono text-sm text-accent">{item.year}</span>
+              <span className="rounded border border-line px-2 py-0.5 text-xs text-muted">{labels[item.type]}</span>
+            </div>
+            <h3 className="mt-1 text-lg font-bold">
+              {item.link ? (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 hover:text-brand"
                 >
-                  <div className={`flex flex-wrap items-center gap-2 mb-1 ${isLeft ? 'justify-end' : 'justify-start'}`}>
-                    <span className="text-accent-purple font-mono text-sm">{item.year}</span>
-                    <span className={`px-2 py-0.5 text-xs rounded border ${typeColors[item.type]}`}>
-                      {item.type === 'project' && 'Projeto'}
-                      {item.type === 'education' && 'Formação'}
-                      {item.type === 'work' && 'Experiência'}
-                      {item.type === 'milestone' && 'Marco'}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-[var(--color-text)]">
-                    {item.link ? (
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-accent-purple transition-colors focus-visible:outline-accent-purple focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded"
-                      >
-                        {item.title}
-                      </a>
-                    ) : (
-                      item.title
-                    )}
-                  </h3>
-                  {item.description && (
-                    <p className="text-sm text-[var(--color-text-muted)] mt-1">{item.description}</p>
-                  )}
-                </div>
-              );
-              const dot = (
-                <div className="flex-shrink-0 w-4 h-4 rounded-full bg-accent-purple border-2 border-dark-950 ring-4 ring-dark-950" />
-              );
-
-              return (
-                <div
-                  key={`${item.year}-${item.title}-${i}`}
-                  className={`relative flex items-center gap-0 ${transitionClass} ${visibleClass}`}
-                  style={isInView ? { transitionDelay: `${0.15 + i * 0.05}s` } : {}}
-                >
-                  {isLeft ? (
-                    <>
-                      {content}
-                      {dot}
-                      <div className="flex-1 min-w-0" />
-                    </>
-                  ) : (
-                    <>
-                      <div className="flex-1 min-w-0" />
-                      {dot}
-                      {content}
-                    </>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </section>
+                  {item.title}
+                  <span className="sr-only"> (código no GitHub, abre em nova aba)</span>
+                  <HiExternalLink aria-hidden className="shrink-0 text-muted" />
+                </a>
+              ) : (
+                item.title
+              )}
+            </h3>
+            <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted">{item.description}</p>
+          </li>
+        ))}
+      </ol>
+    </Section>
   );
 }
