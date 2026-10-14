@@ -1,25 +1,23 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
-import Services from '../components/Services';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import Timeline from '../components/Timeline';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import WhatsAppFab from '../components/WhatsAppFab';
 import { bio } from '../data/bio';
 import { contact } from '../data/contact';
 import { siteUrl } from '../config';
 
-const pageTitle = 'Alan Diogo | Desenvolvedor full stack — vaga de programação e freelas';
+const pageTitle = 'Alan Diogo | Desenvolvedor Full Stack Júnior — Portfólio';
 const ogImage = `${siteUrl}/og.png`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: bio.name,
-  jobTitle: 'Desenvolvedor full stack',
+  jobTitle: bio.role,
   url: siteUrl,
   email: contact.email,
   sameAs: contact.links.map((l) => l.url),
@@ -32,7 +30,7 @@ export default function Home() {
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={bio.description} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0b0e11" />
         <link rel="canonical" href={siteUrl} />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -42,7 +40,7 @@ export default function Home() {
         <meta property="og:image" content={ogImage} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Alan Diogo — Desenvolvedor full stack. Disponível para vaga de programação e freelas" />
+        <meta property="og:image:alt" content="Alan Diogo — Desenvolvedor Full Stack Júnior" />
         <meta property="og:url" content={siteUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="pt_BR" />
@@ -66,11 +64,9 @@ export default function Home() {
         <Projects />
         <Skills />
         <Timeline />
-        <Services />
         <Contact />
       </main>
       <Footer />
-      <WhatsAppFab />
     </>
   );
 }

@@ -10,7 +10,7 @@ export default function Timeline() {
       id="timeline"
       eyebrow="Trajetória"
       title="Formação e projetos, em ordem"
-      intro="Estudante de Engenharia de Software na UTFPR, com técnico em Informática e Desenvolvimento de Sistemas (2020–2023)."
+      intro="Estudante de Engenharia de Software na UTFPR, com técnico em Informática e Desenvolvimento de Sistemas (2021–2023)."
     >
       <ol className="relative space-y-8 border-l-2 border-line pl-6 sm:pl-8">
         {timeline.map((item) => (

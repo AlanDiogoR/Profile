@@ -13,16 +13,18 @@ interface Props {
   href: string;
   variant?: Variant;
   external?: boolean;
+  download?: boolean;
   children: ReactNode;
   className?: string;
 }
 
-export default function Button({ href, variant = 'primary', external, children, className = '' }: Props) {
+export default function Button({ href, variant = 'primary', external, download, children, className = '' }: Props) {
   return (
     <a
       href={href}
       className={`${base} ${variants[variant]} ${className}`}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      {...(download ? { download: true } : {})}
     >
       {children}
     </a>

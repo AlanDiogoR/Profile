@@ -1,14 +1,12 @@
 import { useState } from 'react';
-import { HiMenu, HiX, HiSun, HiMoon } from 'react-icons/hi';
-import { FaWhatsapp } from 'react-icons/fa';
-import { contact } from '../data/contact';
+import { HiMenu, HiX, HiSun, HiMoon, HiDownload } from 'react-icons/hi';
+import { cvUrl } from '../config';
 import { useTheme } from '../contexts/ThemeContext';
 
 const navItems = [
   { href: '#projetos', label: 'Projetos' },
   { href: '#skills', label: 'Skills' },
   { href: '#timeline', label: 'Trajetória' },
-  { href: '#servicos', label: 'Serviços' },
   { href: '#contato', label: 'Contato' },
 ];
 
@@ -42,12 +40,11 @@ export default function Header() {
             {theme === 'dark' ? <HiSun size={20} aria-hidden /> : <HiMoon size={20} aria-hidden />}
           </button>
           <a
-            href={contact.whatsappGeneral}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={cvUrl}
+            download
             className="ml-1 hidden min-h-[40px] items-center gap-2 rounded-lg bg-brand px-4 text-sm font-semibold text-on-brand transition hover:brightness-110 md:inline-flex"
           >
-            <FaWhatsapp size={16} aria-hidden /> WhatsApp
+            <HiDownload size={16} aria-hidden /> Currículo
           </a>
           <button
             type="button"
