@@ -1,4 +1,5 @@
 import Section from './Section';
+import Tag from './Tag';
 import { skills } from '../data/skills';
 
 export default function Skills() {
@@ -17,9 +18,7 @@ export default function Skills() {
             <p className="mt-2 text-sm leading-relaxed text-muted">{s.description}</p>
             <ul className="mt-4 flex flex-wrap gap-2" aria-label={`Tecnologias de ${s.title}`}>
               {s.tech.map((t) => (
-                <li key={t} className="rounded-md bg-raised px-2.5 py-1 text-xs text-ink">
-                  {t}
-                </li>
+                <Tag key={t}>{t}</Tag>
               ))}
             </ul>
             <p className="mt-auto pt-4 text-xs text-muted">Visto em: {s.evidence}</p>

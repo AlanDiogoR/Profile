@@ -4,11 +4,5 @@ export const siteUrl = (
   'https://profile-peach-one-26.vercel.app'
 ).replace(/\/$/, '');
 
-/** Número oficial de WhatsApp (formato internacional, só dígitos). ÚNICA fonte de verdade. */
-export const WHATSAPP_NUMBER = '5514998931883';
-export const WHATSAPP_DISPLAY = '+55 (14) 99893-1883';
-
-/** Monta o link wa.me com mensagem pré-preenchida. */
-export function whatsappLink(message: string): string {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-}
+/** Currículo em PDF servido de /public. */
+export const cvUrl = '/cv/alan-diogo-cv.pdf';

@@ -7,55 +7,48 @@ export interface SkillGroup {
   evidence: string;
 }
 
-/** Derivado do que os repositórios públicos realmente usam (package.json, pom.xml, README). */
+/** Derivado do que os repositórios públicos realmente usam. */
 export const skills: SkillGroup[] = [
   {
     id: 'front',
     title: 'Front-end',
     description: 'Interfaces responsivas, acessíveis e tipadas.',
-    tech: ['TypeScript', 'React', 'Next.js', 'Vue 3', 'Nuxt', 'Tailwind CSS', 'Vuetify', 'Framer Motion'],
-    evidence: 'Bike Center, Grivy, Kabeção Veículos',
+    tech: ['TypeScript', 'React', 'Next.js', 'Vue 3', 'Nuxt', 'Redux Toolkit', 'Tailwind CSS'],
+    evidence: 'Grivy, CodeLeap Network, Verdan, IShop',
   },
   {
     id: 'back',
     title: 'Back-end',
     description: 'APIs REST com autenticação, validação e camadas bem separadas.',
-    tech: ['Java 21', 'Spring Boot', 'Spring Security', 'Node.js', 'Express', 'Prisma', 'JWT', 'Zod'],
-    evidence: 'Grivy, Bike Center',
+    tech: ['Node.js', 'Express', 'Java 21', 'Spring Boot', 'Spring Security', 'JWT'],
+    evidence: 'Mood Sharing, Grivy, Verdan',
   },
   {
     id: 'dados',
     title: 'Banco de dados',
     description: 'Modelagem, migrações e persistência relacional e NoSQL.',
-    tech: ['PostgreSQL', 'MongoDB', 'JPA', 'Flyway', 'SQLite'],
-    evidence: 'Grivy, Bike Center, SECOMP CyberSec',
+    tech: ['PostgreSQL', 'MongoDB', 'JPA', 'Flyway', 'Firestore'],
+    evidence: 'Grivy, Mood Sharing, CodeLeap Network',
   },
   {
     id: 'mobile',
     title: 'Mobile',
-    description: 'App multiplataforma compartilhando código com a web.',
-    tech: ['React Native', 'Expo', 'Expo Router', 'NativeWind', 'TanStack Query', 'Zustand'],
-    evidence: 'Bike Center (apps/mobile)',
+    description: 'App multiplataforma consumindo API própria.',
+    tech: ['React Native', 'Expo'],
+    evidence: 'Mood Sharing',
   },
   {
     id: 'qualidade',
     title: 'Qualidade e entrega',
     description: 'Testes automatizados, containers e deploy.',
-    tech: ['Vitest', 'JUnit', 'Docker', 'GitHub Actions', 'Vercel', 'Netlify', 'Railway'],
-    evidence: 'Bike Center, Grivy, Kabeção Veículos',
-  },
-  {
-    id: 'seguranca',
-    title: 'Segurança de aplicações',
-    description: 'Laboratório educacional de falhas web (CTF e correção) em três linguagens.',
-    tech: ['Java', 'Python (Flask)', 'C# (ASP.NET Core)', 'AppSec'],
-    evidence: 'Desafio SECOMP CyberSec',
+    tech: ['Jest', 'Vitest', 'JUnit', 'Docker', 'GitHub Actions', 'Vercel', 'Netlify'],
+    evidence: 'Grivy, CodeLeap Network, Mood Sharing',
   },
   {
     id: 'base',
     title: 'Fundamentos',
-    description: 'Base da graduação: algoritmos, estruturas de dados e sistemas.',
-    tech: ['C', 'C++', 'Python', 'Algoritmos', 'Sistemas Operacionais'],
+    description: 'Base da graduação: algoritmos, estruturas de dados, POO e paralelismo.',
+    tech: ['C', 'C++', 'Java (POO)', 'SQL', 'OpenMP'],
     evidence: 'UTF-Projetos',
   },
 ];

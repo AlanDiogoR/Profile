@@ -1,70 +1,109 @@
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
+
 export interface Project {
   id: string;
   title: string;
   kind: string;
   description: string;
+  highlights: string[];
   stack: string[];
-  /** Imagem opcional (screenshot do site público). */
+  /** Observação honesta sobre o estado do projeto (ex.: API fora do ar). */
+  note?: string;
   image?: string;
   imageAlt?: string;
-  links: { label: string; url: string }[];
+  imageFit?: 'cover' | 'contain';
+  links: ProjectLink[];
 }
 
-/** Somente links públicos. Não incluir repositórios privados nem URLs de checkout. */
+/**
+ * Somente repositórios públicos de AlanDiogoR. Link de deploy só entra se respondia 200 na revisão (14/10/2026).
+ */
 export const projects: Project[] = [
   {
-    id: 'bike-center',
-    title: 'Bike Center',
-    kind: 'E-commerce e site de loja local · Fartura/SP',
-    description:
-      'Plataforma para loja de bicicletas e motos: API REST, loja web e app mobile em monorepo, com pedido de orçamento direto no WhatsApp.',
-    stack: ['Next.js', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'MongoDB', 'Expo', 'Docker'],
-    image: '/images/projects/bike.webp',
-    imageAlt: 'Página inicial do site Bike Center, com fotos de bicicletas na loja e botões de WhatsApp',
-    links: [
-      { label: 'Ver site', url: 'https://bike-center-web.vercel.app' },
-      { label: 'Código', url: 'https://github.com/AlanDiogoR/bike-center' },
+    id: 'mood-sharing',
+    title: 'Mood Sharing',
+    kind: 'API REST + app mobile',
+    description: 'App para casais compartilharem humor, notas, fotos e metas, com back-end próprio.',
+    highlights: [
+      'API em Node.js, Express e TypeScript com MongoDB, organizada em módulos',
+      'JWT com access e refresh token (rotação e revogação), bcrypt e validação de entrada',
+      'Helmet, rate limiting e sanitização contra NoSQL injection',
+      'App React Native (Expo) com geolocalização, push e biometria',
     ],
+    stack: ['Node.js', 'Express', 'TypeScript', 'MongoDB', 'JWT', 'React Native', 'Expo', 'Jest'],
+    image: '/images/projects/mood-sharing.webp',
+    imageAlt: 'Tela do app Mood Sharing mostrando o estado atual do usuário e o do parceiro',
+    imageFit: 'contain',
+    links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/Mood-Sharing' }],
   },
   {
     id: 'grivy',
     title: 'Grivy',
-    kind: 'Controle financeiro pessoal',
-    description:
-      'App de finanças pessoais com contas, transações, categorias e metas de economia. Autenticação com JWT e arquitetura limpa no back-end.',
-    stack: ['Vue 3', 'Nuxt', 'Vuetify', 'Java 21', 'Spring Boot', 'PostgreSQL'],
+    kind: 'Controle financeiro pessoal · Desafio Astrocode',
+    description: 'Controle de contas, transações, cartões e metas de economia.',
+    highlights: [
+      'API REST em camadas com Spring Security + JWT, JPA e migrações Flyway',
+      'Documentação OpenAPI/Swagger e rate limiting de login',
+      'Front-end em Nuxt/Vue 3 com Pinia e TanStack Query',
+      'Testes com JUnit e Vitest, Docker e CI no GitHub Actions',
+    ],
+    stack: ['Java 21', 'Spring Boot', 'PostgreSQL', 'Nuxt', 'Vue 3', 'TypeScript', 'Docker'],
+    note: 'O front está publicado; a API está temporariamente fora do ar, então login e dados podem não funcionar.',
     image: '/images/projects/grivy.webp',
-    imageAlt: 'Página inicial do Grivy com a frase "Chega de não saber para onde vai o seu dinheiro" e um painel de contas',
+    imageAlt: 'Página inicial do Grivy com a frase "Chega de não saber para onde vai o seu dinheiro"',
     links: [
       { label: 'Ver site', url: 'https://grivy.netlify.app' },
       { label: 'Código', url: 'https://github.com/AlanDiogoR/Desafio-Astrocode' },
     ],
   },
   {
-    id: 'kabecao',
-    title: 'Kabeção Veículos',
-    kind: 'Linktree para revenda · Fartura/SP',
-    description:
-      'Landing page estilo Linktree focada em levar o cliente ao WhatsApp, com SEO local e testes automatizados.',
-    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vitest'],
-    links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/kabecao-veiculos' }],
+    id: 'verdan',
+    title: 'Verdan',
+    kind: 'E-commerce full stack · TCC do curso técnico',
+    description: 'Loja virtual de brinquedos com API própria e painel administrativo desktop.',
+    highlights: [
+      'API REST com CRUD de produtos, categorias e pedidos',
+      'Login com JWT e bcrypt',
+      'Painel administrativo em Electron',
+    ],
+    stack: ['Next.js', 'React', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Electron'],
+    image: '/images/projects/verdan.webp',
+    imageAlt: 'Página inicial da loja Verdan com banner "Brinquedos para todas as crianças"',
+    links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/TCC' }],
   },
   {
-    id: 'secomp',
-    title: 'Desafio SECOMP CyberSec',
-    kind: 'Segurança de aplicações · Educacional',
-    description:
-      'Laboratório de AppSec para a palestra de CyberSec da SECOMP: um banco propositalmente vulnerável em três linguagens, para praticar exploração (CTF) e correção de falhas web. Uso apenas em localhost.',
-    stack: ['Java', 'Python', 'C#', 'SQLite', 'AppSec'],
-    links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/Desafi-SECOMP_2026_CyberSec' }],
+    id: 'codeleap',
+    title: 'CodeLeap Network',
+    kind: 'Rede social · Teste técnico',
+    description: 'CRUD de posts com curtidas, comentários e menções, atualizado em tempo real.',
+    highlights: [
+      'Edição e exclusão restritas ao autor, infinite scroll com paginação por cursor',
+      'Repository Pattern (API REST ou Firestore) e estado global com Redux Toolkit',
+      'Validação com Zod, proteção contra XSS (DOMPurify) e testes com Vitest',
+    ],
+    stack: ['React', 'TypeScript', 'Vite', 'Redux Toolkit', 'Firebase', 'Tailwind CSS', 'Vitest'],
+    image: '/images/projects/codeleap.webp',
+    imageAlt: 'Tela da CodeLeap Network com o formulário "What\'s on your mind?" e o feed de posts',
+    links: [
+      { label: 'Ver site', url: 'https://code-leap-test-tau.vercel.app' },
+      { label: 'Código', url: 'https://github.com/AlanDiogoR/CodeLeap-test' },
+    ],
   },
   {
-    id: 'utf',
-    title: 'UTF-Projetos',
-    kind: 'Formação · UTFPR',
-    description:
-      'Exercícios, listas, diagramas e projetos práticos do curso de Engenharia de Software, organizados por disciplina e período.',
-    stack: ['C', 'Algoritmos', 'Banco de dados'],
-    links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/UTF-Projetos' }],
+    id: 'ishop',
+    title: 'IShop',
+    kind: 'Loja virtual com Stripe',
+    description: 'Catálogo de camisetas vindo da API do Stripe, com checkout por API Route.',
+    highlights: [
+      'Páginas estáticas com SSG/ISR e rotas dinâmicas',
+      'API Route que cria a sessão de pagamento no Stripe',
+    ],
+    stack: ['Next.js', 'React', 'TypeScript', 'Stripe', 'Stitches'],
+    image: '/images/projects/ishop.webp',
+    imageAlt: 'Vitrine do IShop com camisetas em um carrossel',
+    links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/IShop' }],
   },
 ];
