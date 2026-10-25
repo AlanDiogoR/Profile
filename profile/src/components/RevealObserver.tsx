@@ -2,20 +2,35 @@ import { useEffect } from 'react';
 
 let revealObserver: IntersectionObserver | null = null;
 
-export function revealSectionNow(id: string) {
+function showNow(el: HTMLElement) {
+  revealObserver?.unobserve(el);
+  el.style.setProperty('--reveal-i', '0');
+  el.classList.add('reveal-now', 'is-in');
+}
+
+export function revealRangeTo(id: string) {
   if (!document.documentElement.classList.contains('js-motion')) return;
-  const section = document.getElementById(id);
-  if (!section) return;
-  section.querySelectorAll<HTMLElement>('.reveal').forEach((el) => {
-    revealObserver?.unobserve(el);
-    el.style.setProperty('--reveal-i', '0');
-    el.classList.add('reveal-now', 'is-in');
+  const target = document.getElementById(id);
+  if (!target) return;
+
+  const scrollY = window.scrollY;
+  const targetTop = target.getBoundingClientRect().top + scrollY;
+  const from = Math.min(scrollY, targetTop);
+  const to = Math.max(scrollY + window.innerHeight, targetTop + target.offsetHeight);
+  const nodes = Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
+  const boxes = nodes.map((el) => {
+    const top = el.getBoundingClientRect().top + scrollY;
+    return { el, top, bottom: top + el.offsetHeight };
+  });
+  boxes.forEach(({ el, top, bottom }) => {
+    if (bottom < from || top > to) return;
+    showNow(el);
   });
 }
 
 function revealFromHash() {
   const id = window.location.hash.replace(/^#/, '');
-  if (id) revealSectionNow(id);
+  if (id) revealRangeTo(id);
 }
 
 export default function RevealObserver() {
@@ -31,7 +46,7 @@ export default function RevealObserver() {
       const link = (event.target as Element | null)?.closest?.('a[href^="#"]');
       if (!link) return;
       const id = link.getAttribute('href')?.slice(1);
-      if (id) revealSectionNow(id);
+      if (id) revealRangeTo(id);
     };
     document.addEventListener('click', onClick);
     window.addEventListener('hashchange', revealFromHash);

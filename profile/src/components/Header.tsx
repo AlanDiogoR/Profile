@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { HiMenu, HiX, HiSun, HiMoon, HiMail } from 'react-icons/hi';
 import { useTheme } from '../contexts/ThemeContext';
-import { revealSectionNow } from './RevealObserver';
+import { revealRangeTo } from './RevealObserver';
 
 const navItems = [
   { href: '#projetos', id: 'projetos', label: 'Projetos' },
@@ -63,7 +63,7 @@ export default function Header() {
     document.body.style.overflow = '';
     document.documentElement.style.overflow = '';
     if (menu) menu.setAttribute('inert', '');
-    revealSectionNow(id);
+    revealRangeTo(id);
     const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
     requestAnimationFrame(() => {
       document.getElementById(id)?.scrollIntoView({ behavior, block: 'start' });
@@ -97,6 +97,7 @@ export default function Header() {
               key={item.href}
               href={item.href}
               aria-current={active === item.id ? 'true' : undefined}
+              onClick={() => revealRangeTo(item.id)}
               className="nav-link inline-flex min-h-[44px] items-center text-sm text-muted transition-colors duration-[220ms] ease-out hover:text-ink"
             >
               {item.label}
