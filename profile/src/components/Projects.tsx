@@ -8,12 +8,12 @@ export default function Projects() {
       id="projetos"
       eyebrow="Projetos"
       title="Projetos com código público"
-      intro="APIs, front-ends e app mobile que escrevi. Todo projeto tem o repositório aberto; os que estão publicados têm link para o site."
+      intro="Repositórios públicos de programação, do app ao exercício de curso. Onde existe site publicado, o link está no card."
     >
-      <ul className="grid gap-6 md:grid-cols-2">
-        {projects.map((p) => (
-          <li key={p.id} className="md:last:odd:col-span-2">
-            <ProjectCard project={p} />
+      <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+        {projects.map((project) => (
+          <li key={project.id} className="min-w-0">
+            <ProjectCard project={project} />
           </li>
         ))}
       </ul>

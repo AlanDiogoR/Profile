@@ -2,7 +2,7 @@
 
 Portfólio de **Alan Diogo**, desenvolvedor full stack júnior e estudante de Engenharia de Software na UTFPR. Feito para recrutadores: projetos com código público, stack, trajetória e currículo em PDF.
 
-**Site:** https://profile-peach-one-26.vercel.app
+**Site:** https://alandiogo.vercel.app
 
 <p align="center">
   <img src="profile/public/og.png" alt="Prévia do portfólio (imagem Open Graph)" width="720"/>
@@ -12,7 +12,7 @@ Portfólio de **Alan Diogo**, desenvolvedor full stack júnior e estudante de En
 
 - **Next.js 14** (Pages Router, páginas estáticas) + **React 18** + **TypeScript 5** (strict)
 - **Tailwind CSS 3** com tokens de cor em CSS variables (tema claro/escuro)
-- **next/font** (Inter e Space Grotesk, sem bloqueio de render) e **next/image** (WebP, lazy loading, `sizes` responsivo)
+- **next/font** (Space Grotesk, Inter e JetBrains Mono, sem bloqueio de render) e **next/image** (WebP, lazy loading, `sizes` responsivo)
 - **react-icons**, **ESLint** (`eslint-config-next`), **pnpm**
 - Deploy na **Vercel**
 
@@ -20,11 +20,21 @@ Portfólio de **Alan Diogo**, desenvolvedor full stack júnior e estudante de En
 
 | Projeto | O que é | Links |
 |---|---|---|
-| Mood Sharing | API REST (Node.js/Express/MongoDB, JWT) + app React Native | [código](https://github.com/AlanDiogoR/Mood-Sharing) |
-| Grivy | Controle financeiro: Spring Boot + Nuxt/Vue | [site](https://grivy.netlify.app) · [código](https://github.com/AlanDiogoR/Desafio-Astrocode) |
-| Verdan (TCC) | E-commerce full stack com painel em Electron | [código](https://github.com/AlanDiogoR/TCC) |
+| Mood Sharing | App React Native/Expo + API Node.js/Express/MongoDB | [código](https://github.com/AlanDiogoR/Mood-Sharing) |
+| Grivy | Controle financeiro: Spring Boot + Nuxt/Vue | [site](https://grivy.netlify.app) · [vídeo](https://youtu.be/ZRDuhOfDv9A) · [código](https://github.com/AlanDiogoR/Desafio-Astrocode) |
 | CodeLeap Network | Rede social (teste técnico): React, Redux Toolkit, Firebase | [site](https://code-leap-test-tau.vercel.app) · [código](https://github.com/AlanDiogoR/CodeLeap-test) |
+| Verdan (TCC) | E-commerce full stack com painel em Electron | [código](https://github.com/AlanDiogoR/TCC) |
+| Controle Financeiro | Entradas, saídas e busca (React, Vite, json-server), commit `a05ce48` | [código](https://github.com/AlanDiogoR/Controle-finaceiro/tree/a05ce48631f37accf88168a31a995b1e09de5b34) |
 | IShop | Loja com checkout Stripe em Next.js | [código](https://github.com/AlanDiogoR/IShop) |
+| Ignite Time | Timer pomodoro | [código](https://github.com/AlanDiogoR/Ignite-Ts-02) |
+| Desafios Ignite | Todo List e Coffee Delivery | [código](https://github.com/AlanDiogoR/Rocketseat-challenge) |
+| UTF-Projetos | Trabalhos da graduação, com o site Horizon Studio | [site](https://alandiogor.github.io/UTF-Projetos/) · [código](https://github.com/AlanDiogoR/UTF-Projetos) |
+| Spring User | CRUD de usuários em Spring Boot | [código](https://github.com/AlanDiogoR/Spring-User) |
+| ICall | Design system em monorepo | [código](https://github.com/AlanDiogoR/ICall) |
+| Backend Receitas | API de receitas | [código](https://github.com/AlanDiogoR/backend-receitas) |
+| API Node.js | Estudo de API e front | [código](https://github.com/AlanDiogoR/API-nodejs) |
+| Node.js | Exercícios de Express | [código](https://github.com/AlanDiogoR/nodejs) |
+| Exercícios PDF | Lógica de programação em HTML | [código](https://github.com/AlanDiogoR/Exercicios-pdf) |
 
 A API do Grivy está temporariamente fora do ar; o front continua publicado.
 
@@ -34,7 +44,7 @@ A API do Grivy está temporariamente fora do ar; o front continua publicado.
 profile/
 ├── public/            # imagens (WebP), og.png, favicon, robots.txt, sitemap.xml, cv/
 └── src/
-    ├── components/    # Header, Hero, Section, ProjectCard, Projects, Skills, Timeline, Contact, Footer, Button, Tag
+    ├── components/    # Header, Hero, ProjectCard, Projects, About, Skills, Timeline, Contact, Footer, Button, Tag
     ├── contexts/      # ThemeContext (tema claro/escuro salvo no localStorage)
     ├── data/          # conteúdo: bio, projetos, skills, timeline, contato
     ├── pages/         # _app (fontes), _document (lang pt-BR), index (SEO/meta)

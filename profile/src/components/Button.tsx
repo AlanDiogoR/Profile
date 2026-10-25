@@ -3,10 +3,10 @@ import type { ReactNode } from 'react';
 type Variant = 'primary' | 'secondary';
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-colors min-h-[44px]';
+  'inline-flex min-h-[44px] min-w-0 max-w-full items-center justify-center gap-2 whitespace-normal px-5 py-3 text-center text-sm font-semibold transition-colors duration-200';
 const variants: Record<Variant, string> = {
   primary: 'bg-brand text-on-brand hover:brightness-110',
-  secondary: 'border border-line text-ink hover:bg-raised',
+  secondary: 'border border-line bg-surface text-ink hover:border-brand',
 };
 
 interface Props {
@@ -24,7 +24,7 @@ export default function Button({ href, variant = 'primary', external, download, 
       href={href}
       className={`${base} ${variants[variant]} ${className}`}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      {...(download ? { download: true } : {})}
+      {...(download ? { download: 'alan-diogo-cv.pdf' } : {})}
     >
       {children}
     </a>
