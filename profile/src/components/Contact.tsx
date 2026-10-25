@@ -1,4 +1,4 @@
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { HiDownload, HiMail } from 'react-icons/hi';
 import Button from './Button';
 import { contact } from '../data/contact';
@@ -13,7 +13,7 @@ export default function Contact() {
           Falar comigo
         </h2>
         <p className="mt-4 max-w-xl text-base leading-[1.6] text-muted sm:text-lg">
-          Me mande um e-mail ou baixe o currículo. O código está no GitHub.
+          Me mande um e-mail, fale pelo LinkedIn ou baixe o currículo. O código está no GitHub.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <Button href={contact.mailto} className="w-full sm:w-auto">
@@ -21,6 +21,10 @@ export default function Contact() {
           </Button>
           <Button href={contact.github} variant="secondary" external className="w-full sm:w-auto">
             <FaGithub size={18} aria-hidden /> GitHub
+            <span className="sr-only"> (abre em nova aba)</span>
+          </Button>
+          <Button href={contact.linkedin} variant="secondary" external className="w-full sm:w-auto">
+            <FaLinkedin size={18} aria-hidden /> LinkedIn
             <span className="sr-only"> (abre em nova aba)</span>
           </Button>
           <Button href={cvUrl} variant="secondary" download className="w-full sm:w-auto">

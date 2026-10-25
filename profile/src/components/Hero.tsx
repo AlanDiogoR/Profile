@@ -19,10 +19,10 @@ export default function Hero() {
       <div className="mx-auto max-w-6xl">
         <div className="flex items-center gap-3">
           <Image
-            src="/images/alan-diogo.jpg"
-            alt="Foto de Alan Diogo"
-            width={192}
-            height={192}
+            src="/images/alan-diogo.webp"
+            alt="Retrato de Alan Diogo, de camisa preta, sobre fundo claro"
+            width={400}
+            height={400}
             priority
             sizes="96px"
             className="h-20 w-20 border border-line object-cover sm:h-24 sm:w-24"

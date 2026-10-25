@@ -3,36 +3,30 @@ import { HiExternalLink, HiInformationCircle } from 'react-icons/hi';
 import Tag from './Tag';
 import type { Project } from '../data/projects';
 
-export default function ProjectCard({
-  project: p,
-  priority = false,
-}: {
-  project: Project;
-  priority?: boolean;
-}) {
+export default function ProjectCard({ project: p }: { project: Project }) {
   const fit = p.imageFit === 'contain' ? 'object-contain p-3' : 'object-cover object-top';
 
   return (
     <article
       aria-labelledby={`projeto-${p.id}`}
-      className="surface-card flex h-full flex-col overflow-hidden bg-surface lg:flex-row"
+      className="surface-card flex h-full flex-col overflow-hidden bg-surface"
     >
       {p.image && (
-        <div className="relative aspect-[16/10] border-b border-line bg-raised lg:w-[46%] lg:border-b-0 lg:border-r">
+        <div className="relative aspect-[16/10] border-b border-line bg-raised">
           <Image
             src={p.image}
             alt={p.imageAlt ?? `Captura de tela do projeto ${p.title}`}
             fill
-            priority={priority}
-            sizes="(min-width: 1024px) 520px, 100vw"
+            loading="lazy"
+            sizes="(min-width: 768px) 50vw, 100vw"
             className={fit}
           />
         </div>
       )}
 
-      <div className="flex flex-1 flex-col p-5 sm:p-7">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
         <p className="font-mono text-xs uppercase tracking-[0.14em] text-brand-text">{p.kind}</p>
-        <h3 id={`projeto-${p.id}`} className="mt-2 text-2xl tracking-[-0.03em] sm:text-3xl">
+        <h3 id={`projeto-${p.id}`} className="mt-2 text-2xl tracking-[-0.03em]">
           {p.title}
         </h3>
 

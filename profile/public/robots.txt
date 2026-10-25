@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://profile-peach-one-26.vercel.app/sitemap.xml
+
+Sitemap: https://alandiogo.vercel.app/sitemap.xml
