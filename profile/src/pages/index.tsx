@@ -63,7 +63,7 @@ export default function Home() {
         Pular para o conteúdo
       </a>
       <Header />
-      <main id="conteudo">
+      <main id="conteudo" className="section-anchor">
         <Hero />
         <Projects />
         <About />

@@ -7,7 +7,7 @@ export default function Timeline() {
   return (
     <ol className="mt-8 border-t border-line">
       {timeline.map((item) => (
-        <li key={`${item.year}-${item.title}`} className="grid gap-2 border-b border-line py-5 sm:grid-cols-[9.5rem_1fr] sm:gap-8">
+        <li key={`${item.year}-${item.title}`} className="reveal grid gap-2 border-b border-line py-5 sm:grid-cols-[9.5rem_1fr] sm:gap-8">
           <p className="font-mono text-sm text-brand-text">{item.year}</p>
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted">{labels[item.type]}</p>

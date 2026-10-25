@@ -34,16 +34,26 @@
   color-scheme: light;
 }
 
+:root {
+  --header-h: 4rem;
+  /* Barra de 4rem mais a borda inferior de 1px. */
+  --header-offset: calc(var(--header-h) + 1px);
+}
+
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 4.5rem;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
   @apply bg-bg font-sans text-base text-ink antialiased;
   line-height: 1.6;
-  overflow-x: hidden;
+  /* clip não cria scroll container; hidden faria o body rolar e ignorar scroll-behavior. */
+  overflow-x: clip;
+}
+
+.section-anchor {
+  scroll-margin-top: var(--header-offset);
 }
 
 h1,
@@ -66,42 +76,89 @@ h3 {
 
 .text-link,
 .nav-link {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  background-size: 0 1px;
-  transition: background-size 200ms ease, color 200ms ease;
+  position: relative;
+  transition: color 220ms ease-out;
 }
 
-.text-link:hover,
-.text-link:focus-visible,
-.nav-link:hover,
-.nav-link:focus-visible,
-.nav-link[aria-current='true'] {
-  background-size: 100% 1px;
+.text-link::after,
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 220ms ease-out;
+}
+
+.text-link:hover::after,
+.text-link:focus-visible::after,
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link[aria-current='true']::after {
+  transform: scaleX(1);
 }
 
 .surface-card {
   border: 1px solid rgb(var(--line));
-  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  transition: transform 220ms ease-out, border-color 220ms ease-out, box-shadow 220ms ease-out;
+}
+
+.mobile-nav {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 220ms ease-out, transform 220ms ease-out;
+}
+
+.mobile-nav.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .surface-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     border-color: rgb(var(--brand));
     box-shadow: 0 12px 28px -18px rgb(0 0 0 / 0.55);
+  }
+
+  html.js-motion .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  html.js-motion .reveal.is-in,
+  html.js-motion .reveal:focus-within {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 500ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--reveal-i, 0) * 60ms);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  html.js-motion .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .text-link::after,
+  .nav-link::after,
+  .surface-card,
+  .mobile-nav {
+    transition: none;
   }
 }
