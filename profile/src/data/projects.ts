@@ -153,7 +153,7 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'Vite', 'Sass'],
     image: '/images/projects/todo-list.webp',
     imageAlt:
-      'Tela da Todo List com o campo de criar tarefa, contadores em zero e o aviso de que ainda não há tarefas',
+      'Tela da Todo List com quatro tarefas criadas e duas concluídas, contadores em 4 e 2',
     links: [
       {
         label: 'Código',
