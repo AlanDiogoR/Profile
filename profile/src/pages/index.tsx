@@ -2,8 +2,8 @@ import Head from 'next/head';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Projects from '../components/Projects';
+import About from '../components/About';
 import Skills from '../components/Skills';
-import Timeline from '../components/Timeline';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import { bio } from '../data/bio';
@@ -30,8 +30,7 @@ export default function Home() {
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={bio.description} />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0b0e11" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href={siteUrl} />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
@@ -62,8 +61,8 @@ export default function Home() {
       <main id="conteudo">
         <Hero />
         <Projects />
+        <About />
         <Skills />
-        <Timeline />
         <Contact />
       </main>
       <Footer />

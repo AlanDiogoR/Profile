@@ -12,7 +12,7 @@ Portfólio de **Alan Diogo**, desenvolvedor full stack júnior e estudante de En
 
 - **Next.js 14** (Pages Router, páginas estáticas) + **React 18** + **TypeScript 5** (strict)
 - **Tailwind CSS 3** com tokens de cor em CSS variables (tema claro/escuro)
-- **next/font** (Inter e Space Grotesk, sem bloqueio de render) e **next/image** (WebP, lazy loading, `sizes` responsivo)
+- **next/font** (Space Grotesk, Inter e JetBrains Mono, sem bloqueio de render) e **next/image** (WebP, lazy loading, `sizes` responsivo)
 - **react-icons**, **ESLint** (`eslint-config-next`), **pnpm**
 - Deploy na **Vercel**
 
@@ -34,7 +34,7 @@ A API do Grivy está temporariamente fora do ar; o front continua publicado.
 profile/
 ├── public/            # imagens (WebP), og.png, favicon, robots.txt, sitemap.xml, cv/
 └── src/
-    ├── components/    # Header, Hero, Section, ProjectCard, Projects, Skills, Timeline, Contact, Footer, Button, Tag
+    ├── components/    # Header, Hero, ProjectCard, Projects, About, Skills, Timeline, Contact, Footer, Button, Tag
     ├── contexts/      # ThemeContext (tema claro/escuro salvo no localStorage)
     ├── data/          # conteúdo: bio, projetos, skills, timeline, contato
     ├── pages/         # _app (fontes), _document (lang pt-BR), index (SEO/meta)
