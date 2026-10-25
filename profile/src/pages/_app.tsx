@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
 import '../styles/globals.css';
 import { ThemeProvider } from '../contexts/ThemeContext';
+import RevealObserver from '../components/RevealObserver';
 
 const display = Space_Grotesk({
   subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider>
       <div className={`${display.variable} ${sans.variable} ${mono.variable} font-sans`}>
         <Component {...pageProps} />
+        <RevealObserver />
       </div>
     </ThemeProvider>
   );

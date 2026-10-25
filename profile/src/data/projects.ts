@@ -153,7 +153,7 @@ export const projects: Project[] = [
     stack: ['React', 'TypeScript', 'Vite', 'Sass'],
     image: '/images/projects/todo-list.webp',
     imageAlt:
-      'Tela da Todo List com o campo de criar tarefa, contadores em zero e o aviso de que ainda não há tarefas',
+      'Tela da Todo List com quatro tarefas criadas e duas concluídas, contadores em 4 e 2',
     links: [
       {
         label: 'Código',
@@ -166,16 +166,16 @@ export const projects: Project[] = [
     title: 'Coffee Delivery',
     kind: 'E-commerce de cafés · Ignite',
     description:
-      'Começo do desafio de loja de cafés. A interface que existe no repositório é o cabeçalho, com logo, localização e carrinho.',
+      'Loja de cafés do desafio Ignite. A home traz o catálogo e o carrinho reúne o pedido para a confirmação.',
     highlights: [
-      'Header com a cidade Porto Alegre e o ícone do carrinho',
+      'Home com o hero, a localização Porto Alegre e a seção Nossos cafés',
+      'Carrinho com o item, a quantidade, o total e a confirmação do pedido',
       'Tema global em styled-components',
     ],
     stack: ['React', 'TypeScript', 'Vite', 'styled-components'],
-    note: 'O catálogo, o carrinho e o checkout ainda não estão neste repositório. A captura é só o cabeçalho, que é a tela que o app abre.',
     image: '/images/projects/coffee-delivery.webp',
-    imageAlt: 'Cabeçalho do Coffee Delivery com o logo e a localização Porto Alegre',
-    imageFit: 'contain',
+    imageAlt:
+      'Home do Coffee Delivery com o catálogo de cafés ao lado do carrinho, com o Expresso Tradicional e o total do pedido',
     links: [
       {
         label: 'Código',
@@ -195,9 +195,9 @@ export const projects: Project[] = [
       'Histórico dos ciclos na rota /history, guardado no localStorage',
     ],
     stack: ['React', 'TypeScript', 'Vite', 'styled-components', 'Zod'],
-    image: '/images/projects/pomodoro.webp',
+    image: '/images/projects/ignite-time.webp',
     imageAlt:
-      'Tela do Ignite Time com a tarefa, a duração em minutos, o cronômetro zerado e o botão Começar',
+      'Tela do Ignite Time com o logo, os ícones de timer e histórico, a tarefa, o cronômetro zerado e o botão Começar',
     links: [
       {
         label: 'Código',

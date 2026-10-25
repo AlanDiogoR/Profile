@@ -4,7 +4,7 @@ import { bio } from '../data/bio';
 
 export default function Hero() {
   return (
-    <section id="inicio" aria-labelledby="inicio-titulo" className="scroll-mt-20 px-4 pb-8 pt-24 sm:px-6 md:pb-12 md:pt-28">
+    <section id="inicio" aria-labelledby="inicio-titulo" className="section-anchor px-4 pb-8 pt-24 sm:px-6 md:pb-12 md:pt-28">
       <div className="mx-auto max-w-6xl">
         <Image
           src="/images/alan-diogo.webp"

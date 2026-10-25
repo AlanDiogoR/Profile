@@ -12,7 +12,7 @@ export default function Projects() {
     >
       <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
         {projects.map((project) => (
-          <li key={project.id} className="min-w-0">
+          <li key={project.id} className="reveal min-w-0">
             <ProjectCard project={project} />
           </li>
         ))}

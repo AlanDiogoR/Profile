@@ -27,7 +27,7 @@ Portfólio de **Alan Diogo**, desenvolvedor full stack júnior e estudante de En
 | Controle Financeiro | Entradas, saídas e busca (React, Vite, json-server), commit `a05ce48` | [código](https://github.com/AlanDiogoR/Controle-finaceiro/tree/a05ce48631f37accf88168a31a995b1e09de5b34) |
 | IShop | Loja com checkout Stripe em Next.js | [código](https://github.com/AlanDiogoR/IShop) |
 | Todo List | Lista de tarefas do Ignite | [código](https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/todo%20list) |
-| Coffee Delivery | Cabeçalho da loja de cafés do Ignite | [código](https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/Coffe%20Delivery) |
+| Coffee Delivery | Loja de cafés do Ignite, com catálogo e carrinho | [código](https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/Coffe%20Delivery) |
 | Pomodoro | Timer Ignite Time | [código](https://github.com/AlanDiogoR/Ignite-Ts-02/tree/main/Ignite-time) |
 | UTF-Projetos | Trabalhos da graduação, com o site Horizon Studio | [site](https://alandiogor.github.io/UTF-Projetos/) · [código](https://github.com/AlanDiogoR/UTF-Projetos) |
 | Spring User | CRUD de usuários em Spring Boot | [código](https://github.com/AlanDiogoR/Spring-User) |
