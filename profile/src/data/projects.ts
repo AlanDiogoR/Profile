@@ -195,7 +195,7 @@ export const projects: Project[] = [
       'Histórico dos ciclos na rota /history, guardado no localStorage',
     ],
     stack: ['React', 'TypeScript', 'Vite', 'styled-components', 'Zod'],
-    image: '/images/projects/pomodoro.webp',
+    image: '/images/projects/ignite-time.webp',
     imageAlt:
       'Tela do Ignite Time com o logo, os ícones de timer e histórico, a tarefa, o cronômetro zerado e o botão Começar',
     links: [
