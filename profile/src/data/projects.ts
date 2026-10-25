@@ -140,32 +140,70 @@ export const projects: Project[] = [
     links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/IShop' }],
   },
   {
-    id: 'ignite-time',
-    title: 'Ignite Time',
-    kind: 'Timer Pomodoro',
+    id: 'todo-list',
+    title: 'Todo List',
+    kind: 'Lista de tarefas · Ignite',
     description:
-      'Timer pomodoro com histórico no navegador. As rotas são o timer e a página de ciclos já concluídos.',
+      'Lista para anotar o que falta fazer: criar a tarefa, marcar como concluída e apagar. Os dados ficam na memória e somem ao recarregar.',
     highlights: [
-      'React Router com as rotas / e /history',
-      'Formulário com React Hook Form e Zod',
-      'Ciclos guardados no localStorage',
+      'O botão Criar fica desabilitado enquanto o campo está vazio',
+      'Contadores de tarefas criadas e concluídas',
+      'Estado vazio quando ainda não há tarefas',
     ],
-    stack: ['React', 'TypeScript', 'Vite', 'styled-components', 'Zod'],
-    links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/Ignite-Ts-02' }],
+    stack: ['React', 'TypeScript', 'Vite', 'Sass'],
+    image: '/images/projects/todo-list.webp',
+    imageAlt:
+      'Tela da Todo List com o campo de criar tarefa, contadores em zero e o aviso de que ainda não há tarefas',
+    links: [
+      {
+        label: 'Código',
+        url: 'https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/todo%20list',
+      },
+    ],
   },
   {
-    id: 'rocketseat',
-    title: 'Desafios Ignite',
-    kind: 'Todo List e Coffee Delivery',
+    id: 'coffee-delivery',
+    title: 'Coffee Delivery',
+    kind: 'E-commerce de cafés · Ignite',
     description:
-      'Dois desafios de front-end da trilha Ignite, cada um na própria pasta do repositório.',
+      'Começo do desafio de loja de cafés. A interface que existe no repositório é o cabeçalho, com logo, localização e carrinho.',
     highlights: [
-      'Todo List concluída: criar, concluir e apagar tarefas, com contadores e estado vazio',
-      'Tarefas só em memória: somem ao recarregar a página',
-      'Coffee Delivery em andamento, com tema e header (logo, localização e carrinho)',
+      'Header com a cidade Porto Alegre e o ícone do carrinho',
+      'Tema global em styled-components',
     ],
-    stack: ['React', 'TypeScript', 'Vite', 'CSS Modules', 'styled-components'],
-    links: [{ label: 'Código', url: 'https://github.com/AlanDiogoR/Rocketseat-challenge' }],
+    stack: ['React', 'TypeScript', 'Vite', 'styled-components'],
+    note: 'O catálogo, o carrinho e o checkout ainda não estão neste repositório. A captura é só o cabeçalho, que é a tela que o app abre.',
+    image: '/images/projects/coffee-delivery.webp',
+    imageAlt: 'Cabeçalho do Coffee Delivery com o logo e a localização Porto Alegre',
+    imageFit: 'contain',
+    links: [
+      {
+        label: 'Código',
+        url: 'https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/Coffe%20Delivery',
+      },
+    ],
+  },
+  {
+    id: 'pomodoro',
+    title: 'Pomodoro',
+    kind: 'Ignite Time',
+    description:
+      'Timer pomodoro: a pessoa escreve a tarefa e quantos minutos vai trabalhar, inicia o ciclo e consulta o histórico no navegador.',
+    highlights: [
+      'Formulário com React Hook Form e Zod na rota /',
+      'Cronômetro e botão Começar',
+      'Histórico dos ciclos na rota /history, guardado no localStorage',
+    ],
+    stack: ['React', 'TypeScript', 'Vite', 'styled-components', 'Zod'],
+    image: '/images/projects/pomodoro.webp',
+    imageAlt:
+      'Tela do Ignite Time com a tarefa, a duração em minutos, o cronômetro zerado e o botão Começar',
+    links: [
+      {
+        label: 'Código',
+        url: 'https://github.com/AlanDiogoR/Ignite-Ts-02/tree/main/Ignite-time',
+      },
+    ],
   },
   {
     id: 'utf-projetos',

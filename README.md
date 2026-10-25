@@ -26,8 +26,9 @@ Portfólio de **Alan Diogo**, desenvolvedor full stack júnior e estudante de En
 | Verdan (TCC) | E-commerce full stack com painel em Electron | [código](https://github.com/AlanDiogoR/TCC) |
 | Controle Financeiro | Entradas, saídas e busca (React, Vite, json-server), commit `a05ce48` | [código](https://github.com/AlanDiogoR/Controle-finaceiro/tree/a05ce48631f37accf88168a31a995b1e09de5b34) |
 | IShop | Loja com checkout Stripe em Next.js | [código](https://github.com/AlanDiogoR/IShop) |
-| Ignite Time | Timer pomodoro | [código](https://github.com/AlanDiogoR/Ignite-Ts-02) |
-| Desafios Ignite | Todo List e Coffee Delivery | [código](https://github.com/AlanDiogoR/Rocketseat-challenge) |
+| Todo List | Lista de tarefas do Ignite | [código](https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/todo%20list) |
+| Coffee Delivery | Cabeçalho da loja de cafés do Ignite | [código](https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/Coffe%20Delivery) |
+| Pomodoro | Timer Ignite Time | [código](https://github.com/AlanDiogoR/Ignite-Ts-02/tree/main/Ignite-time) |
 | UTF-Projetos | Trabalhos da graduação, com o site Horizon Studio | [site](https://alandiogor.github.io/UTF-Projetos/) · [código](https://github.com/AlanDiogoR/UTF-Projetos) |
 | Spring User | CRUD de usuários em Spring Boot | [código](https://github.com/AlanDiogoR/Spring-User) |
 | ICall | Design system em monorepo | [código](https://github.com/AlanDiogoR/ICall) |

@@ -2,33 +2,19 @@ import Image from 'next/image';
 import Button from './Button';
 import { bio } from '../data/bio';
 
-function Monogram() {
-  return (
-    <div
-      aria-hidden
-      className="grid h-20 w-20 shrink-0 place-items-center border border-line bg-surface font-display text-2xl font-bold tracking-tight sm:h-24 sm:w-24"
-    >
-      <span className="flex h-full w-full items-center justify-center border-l-[3px] border-brand">AD</span>
-    </div>
-  );
-}
-
 export default function Hero() {
   return (
     <section id="inicio" aria-labelledby="inicio-titulo" className="scroll-mt-20 px-4 pb-8 pt-24 sm:px-6 md:pb-12 md:pt-28">
       <div className="mx-auto max-w-6xl">
-        <div className="flex items-center gap-3">
-          <Image
-            src="/images/alan-diogo.webp"
-            alt="Retrato de Alan Diogo, de camisa preta, sobre fundo claro"
-            width={400}
-            height={400}
-            priority
-            sizes="96px"
-            className="h-20 w-20 border border-line object-cover sm:h-24 sm:w-24"
-          />
-          <Monogram />
-        </div>
+        <Image
+          src="/images/alan-diogo.webp"
+          alt="Retrato de Alan Diogo, de camisa preta, sobre fundo claro"
+          width={400}
+          height={400}
+          priority
+          sizes="160px"
+          className="h-28 w-28 rounded-full border border-line object-cover sm:h-36 sm:w-36 md:h-40 md:w-40"
+        />
 
         <h1
           id="inicio-titulo"
