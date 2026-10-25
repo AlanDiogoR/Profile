@@ -6,7 +6,7 @@ import { cvUrl } from '../config';
 
 export default function Contact() {
   return (
-    <section id="contato" aria-labelledby="contato-titulo" className="scroll-mt-20 px-4 py-16 sm:px-6 sm:py-24">
+    <section id="contato" aria-labelledby="contato-titulo" className="scroll-mt-20 px-4 py-8 sm:px-6 md:py-12">
       <div className="mx-auto max-w-6xl border border-line bg-surface px-5 py-10 sm:px-10 sm:py-14">
         <p className="font-mono text-xs uppercase tracking-[0.16em] text-brand-text">Contato</p>
         <h2 id="contato-titulo" className="mt-3 max-w-3xl text-4xl tracking-[-0.04em] sm:text-5xl">

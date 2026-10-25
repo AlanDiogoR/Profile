@@ -3,7 +3,7 @@ import Timeline from './Timeline';
 
 export default function About() {
   return (
-    <section id="sobre" aria-labelledby="sobre-titulo" className="scroll-mt-20 px-4 py-16 sm:px-6 sm:py-20">
+    <section id="sobre" aria-labelledby="sobre-titulo" className="scroll-mt-20 px-4 py-8 sm:px-6 md:py-12">
       <div className="mx-auto max-w-6xl">
         <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-brand-text">Sobre</p>
         <h2 id="sobre-titulo" className="max-w-3xl text-3xl tracking-[-0.03em] md:text-4xl">

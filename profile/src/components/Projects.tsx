@@ -1,7 +1,9 @@
 import Section from './Section';
 import ProjectCard from './ProjectCard';
-import Reveal from './Reveal';
 import { projects } from '../data/projects';
+
+/** Quatro primeiros projetos da lista existente, sem inventar links ou descrições. */
+const featured = projects.slice(0, 4);
 
 export default function Projects() {
   return (
@@ -12,15 +14,9 @@ export default function Projects() {
       intro="APIs, front-ends e app mobile que escrevi. Todo projeto tem o repositório aberto; os que estão publicados têm link para o site."
     >
       <ul className="flex flex-col gap-6">
-        {projects.map((project, index) => (
+        {featured.map((project, index) => (
           <li key={project.id}>
-            {index === 0 ? (
-              <ProjectCard project={project} priority />
-            ) : (
-              <Reveal>
-                <ProjectCard project={project} />
-              </Reveal>
-            )}
+            <ProjectCard project={project} priority={index === 0} />
           </li>
         ))}
       </ul>

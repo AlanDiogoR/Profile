@@ -92,20 +92,6 @@ h3 {
     border-color: rgb(var(--brand));
     box-shadow: 0 12px 28px -18px rgb(0 0 0 / 0.55);
   }
-
-  .reveal-wait {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  .reveal-in {
-    animation: reveal 300ms ease both;
-  }
-}
-
-@keyframes reveal {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

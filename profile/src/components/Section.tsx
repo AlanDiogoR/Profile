@@ -10,7 +10,7 @@ interface Props {
 
 export default function Section({ id, eyebrow, title, intro, children }: Props) {
   return (
-    <section id={id} aria-labelledby={`${id}-titulo`} className="scroll-mt-20 px-4 py-16 sm:px-6 sm:py-20">
+    <section id={id} aria-labelledby={`${id}-titulo`} className="scroll-mt-20 px-4 py-8 sm:px-6 md:py-12">
       <div className="mx-auto max-w-6xl">
         <p className="mb-3 font-mono text-xs uppercase tracking-[0.16em] text-brand-text">{eyebrow}</p>
         <h2 id={`${id}-titulo`} className="max-w-3xl text-3xl tracking-[-0.03em] md:text-4xl">
