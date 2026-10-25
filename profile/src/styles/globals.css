@@ -109,9 +109,9 @@ h3 {
 
 .mobile-nav {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   pointer-events: none;
-  transition: opacity 220ms ease-out, transform 220ms ease-out;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
 }
 
 .mobile-nav.is-open {
@@ -140,6 +140,12 @@ h3 {
       opacity 500ms cubic-bezier(0.22, 1, 0.36, 1),
       transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
     transition-delay: calc(var(--reveal-i, 0) * 60ms);
+  }
+
+  html.js-motion .reveal.reveal-now {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 

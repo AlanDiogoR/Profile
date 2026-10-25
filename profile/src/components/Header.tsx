@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { HiMenu, HiX, HiSun, HiMoon, HiMail } from 'react-icons/hi';
 import { useTheme } from '../contexts/ThemeContext';
+import { revealSectionNow } from './RevealObserver';
 
 const navItems = [
   { href: '#projetos', id: 'projetos', label: 'Projetos' },
@@ -48,12 +49,28 @@ export default function Header() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const menu = menuRef.current;
     if (!menu) return;
     if (open) menu.removeAttribute('inert');
     else menu.setAttribute('inert', '');
   }, [open]);
+
+  const navigateFromMenu = (id: string) => {
+    const menu = menuRef.current;
+    (document.activeElement as HTMLElement | null)?.blur?.();
+    setOpen(false);
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+    if (menu) menu.setAttribute('inert', '');
+    revealSectionNow(id);
+    const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior, block: 'start' });
+      const hash = `#${id}`;
+      if (window.location.hash !== hash) history.pushState(null, '', hash);
+    });
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -135,7 +152,10 @@ export default function Header() {
               <a
                 href={item.href}
                 aria-current={active === item.id ? 'true' : undefined}
-                onClick={() => setOpen(false)}
+                onClick={(event) => {
+                  event.preventDefault();
+                  navigateFromMenu(item.id);
+                }}
                 className="flex min-h-[44px] items-center text-base text-ink"
               >
                 {item.label}
