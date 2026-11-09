@@ -23,7 +23,7 @@ export default function Timeline() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-link inline-flex items-start gap-1.5 hover:text-brand-text"
+                    className="text-link -my-2 inline-flex items-start gap-1.5 py-2 hover:text-brand-text"
                   >
                     {text.title}
                     <span className="sr-only">{copy.externalLink}</span>

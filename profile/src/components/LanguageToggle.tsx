@@ -44,7 +44,7 @@ export default function LanguageToggle() {
                   event.preventDefault();
                   window.location.assign(next);
                 }}
-                className={`inline-flex h-11 items-center px-2.5 transition-colors duration-[220ms] ease-out hover:text-ink ${
+                className={`inline-flex h-11 min-w-11 items-center justify-center px-2.5 transition-colors duration-[220ms] ease-out hover:text-ink ${
                   current ? 'bg-raised text-ink' : 'text-muted'
                 }`}
               >
