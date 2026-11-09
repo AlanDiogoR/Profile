@@ -51,7 +51,7 @@ export const pt = {
     solution: 'Solução',
     stack: 'Stack',
     moreSummary: (count) => `Mais no GitHub (${count})`,
-    moreIntro: 'Exercícios de curso e repositórios menores. As observações continuam honestas.',
+    moreIntro: 'Exercícios de curso e repositórios menores.',
     techOf: (title) => `Tecnologias de ${title}`,
     externalLink: (title) => ` de ${title} (abre em nova aba)`,
     imageFallback: (title) => `Captura de tela do projeto ${title}`,

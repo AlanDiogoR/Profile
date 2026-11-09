@@ -39,19 +39,19 @@ export const en = {
   },
   hero: {
     imageAlt: 'Portrait of Alan Diogo in a black shirt, on a light background',
-    lede: 'Junior full-stack developer in Brazil (UTC-3), open to remote roles. I build REST APIs, typed front ends, and mobile apps, from the database to deploy.',
+    lede: 'Junior full-stack developer in Brazil (UTC-3), open to remote roles. I build REST APIs, typed front ends, and mobile apps, from the database to deployment.',
     viewProjects: 'View projects',
     contact: 'Get in touch',
   },
   projectsSection: {
     eyebrow: 'Projects',
     title: 'Projects with public code',
-    intro: 'Public programming repositories. The stronger work is first; course exercises are folded below. If a site is published, the link is on the card.',
+    intro: 'Public programming repositories. Strongest work first; course exercises are folded below. If a site is published, the link is on the card.',
     problem: 'Problem',
     solution: 'Solution',
     stack: 'Stack',
     moreSummary: (count) => `More on GitHub (${count})`,
-    moreIntro: 'Course exercises and smaller repositories. The notes stay honest.',
+    moreIntro: 'Course exercises and smaller repositories.',
     techOf: (title) => `Technologies in ${title}`,
     externalLink: (title) => ` for ${title} (opens in a new tab)`,
     imageFallback: (title) => `Screenshot of ${title}`,
@@ -59,7 +59,7 @@ export const en = {
   },
   about: {
     eyebrow: 'About',
-    body: 'Software Engineering student at UTFPR (2025 – expected January 2029) and a software developer at Astrocode on a PJ contract since October 2026. I work with Java, Spring Boot, Angular, and PL/SQL, and I review and test code generated with Claude before it ships. I also hold a technical degree in IT and Systems Development (2021–2023). English: upper-intermediate (B2). I read documentation, review code, and write in English.',
+    body: 'Software Engineering student at UTFPR (2025 – expected January 2029) and a software developer at Astrocode, working as an independent contractor since October 2026. I work with Java, Spring Boot, Angular, and PL/SQL, and I review and test code generated with Claude before it ships. I also hold a technical degree in IT and Systems Development (2021–2023). English: upper-intermediate (B2). I read documentation, review code, and write in English.',
   },
   timeline: {
     labels: { work: 'Experience', education: 'Education', project: 'Project' },
@@ -69,7 +69,7 @@ export const en = {
         year: 'Oct 2026 – present',
         title: 'Astrocode — Software Developer (contract)',
         description:
-          'PJ contract. Java, Spring Boot, Angular, and PL/SQL. I review and test AI-generated code (Claude) before it ships.',
+          'Independent contractor. Java, Spring Boot, Angular, and PL/SQL. I review and test AI-generated code (Claude) before it ships.',
       },
       utfpr: {
         year: '2025 – expected Jan 2029',
