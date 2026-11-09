@@ -1,6 +1,6 @@
 # Portfólio — Alan Diogo
 
-Portfólio de **Alan Diogo**, desenvolvedor full stack júnior e estudante de Engenharia de Software na UTFPR. Feito para recrutadores: projetos com código público, stack, trajetória e currículo em PDF.
+Portfólio de **Alan Diogo**, desenvolvedor full stack júnior no Brasil (UTC-3), aberto a vagas remotas, e estudante de Engenharia de Software na UTFPR. Inglês em `/`, português do Brasil em `/pt`.
 
 **Site:** https://alandiogo.vercel.app
 
@@ -16,26 +16,20 @@ Portfólio de **Alan Diogo**, desenvolvedor full stack júnior e estudante de En
 - **react-icons**, **ESLint** (`eslint-config-next`), **pnpm**
 - Deploy na **Vercel**
 
+Dicionários tipados em `src/i18n/`. Não há redirecionamento por `Accept-Language`, cookie ou crawler: a URL pedida é a página servida. O toggle EN | PT grava a escolha em cookie e `localStorage`.
+
 ## Projetos em destaque
 
 | Projeto | O que é | Links |
 |---|---|---|
-| Mood Sharing | App React Native/Expo + API Node.js/Express/MongoDB | [código](https://github.com/AlanDiogoR/Mood-Sharing) |
 | Grivy | Controle financeiro: Spring Boot + Nuxt/Vue | [site](https://grivy.netlify.app) · [vídeo](https://youtu.be/ZRDuhOfDv9A) · [código](https://github.com/AlanDiogoR/Desafio-Astrocode) |
+| Mood Sharing | App React Native/Expo + API Node.js/Express/MongoDB | [código](https://github.com/AlanDiogoR/Mood-Sharing) |
 | CodeLeap Network | Rede social (teste técnico): React, Redux Toolkit, Firebase | [site](https://code-leap-test-tau.vercel.app) · [código](https://github.com/AlanDiogoR/CodeLeap-test) |
 | Verdan (TCC) | E-commerce full stack com painel em Electron | [código](https://github.com/AlanDiogoR/TCC) |
 | Controle Financeiro | Entradas, saídas e busca (React, Vite, json-server), commit `a05ce48` | [código](https://github.com/AlanDiogoR/Controle-finaceiro/tree/a05ce48631f37accf88168a31a995b1e09de5b34) |
 | IShop | Loja com checkout Stripe em Next.js | [código](https://github.com/AlanDiogoR/IShop) |
-| Todo List | Lista de tarefas do Ignite | [código](https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/todo%20list) |
-| Coffee Delivery | Loja de cafés do Ignite, com catálogo e carrinho | [código](https://github.com/AlanDiogoR/Rocketseat-challenge/tree/main/Coffe%20Delivery) |
-| Pomodoro | Timer Ignite Time | [código](https://github.com/AlanDiogoR/Ignite-Ts-02/tree/main/Ignite-time) |
-| UTF-Projetos | Trabalhos da graduação, com o site Horizon Studio | [site](https://alandiogor.github.io/UTF-Projetos/) · [código](https://github.com/AlanDiogoR/UTF-Projetos) |
-| Spring User | CRUD de usuários em Spring Boot | [código](https://github.com/AlanDiogoR/Spring-User) |
-| ICall | Design system em monorepo | [código](https://github.com/AlanDiogoR/ICall) |
-| Backend Receitas | API de receitas | [código](https://github.com/AlanDiogoR/backend-receitas) |
-| API Node.js | Estudo de API e front | [código](https://github.com/AlanDiogoR/API-nodejs) |
-| Node.js | Exercícios de Express | [código](https://github.com/AlanDiogoR/nodejs) |
-| Exercícios PDF | Lógica de programação em HTML | [código](https://github.com/AlanDiogoR/Exercicios-pdf) |
+
+Exercícios de curso e repositórios menores (Todo List, Coffee Delivery, Pomodoro, UTF-Projetos, Spring User, ICall, Backend Receitas, API Node.js, Node.js, Exercícios PDF e este site) ficam em “Mais no GitHub”.
 
 A API do Grivy está temporariamente fora do ar; o front continua publicado.
 
@@ -45,14 +39,13 @@ A API do Grivy está temporariamente fora do ar; o front continua publicado.
 profile/
 ├── public/            # imagens (WebP), og.png, favicon, robots.txt, sitemap.xml, cv/
 └── src/
-    ├── components/    # Header, Hero, ProjectCard, Projects, About, Skills, Timeline, Contact, Footer, Button, Tag
+    ├── components/    # Header, Hero, ProjectCard, Projects, About, Skills, Timeline, Contact, Footer
     ├── contexts/      # ThemeContext (tema claro/escuro salvo no localStorage)
-    ├── data/          # conteúdo: bio, projetos, skills, timeline, contato
-    ├── pages/         # _app (fontes), _document (lang pt-BR), index (SEO/meta)
+    ├── data/          # metadados: projetos, skills, timeline, contato
+    ├── i18n/          # dicionários en e pt, sem redirect automático
+    ├── pages/         # / (en), /pt (pt-BR), _document (lang por página)
     └── styles/        # globals.css (tokens e foco visível)
 ```
-
-O conteúdo fica em `src/data/`: para adicionar um projeto, basta incluir um item em `projects.ts`.
 
 ## Como rodar
 
@@ -67,12 +60,12 @@ pnpm exec tsc --noEmit
 pnpm build && pnpm start
 ```
 
-`NEXT_PUBLIC_SITE_URL` (opcional) define a URL usada em canonical, Open Graph e JSON-LD.
+`NEXT_PUBLIC_SITE_URL` (opcional) define a URL usada em canonical, Open Graph, hreflang e JSON-LD. O padrão é `https://alandiogo.vercel.app`.
 
 ## Qualidade
 
-- **SEO:** title e description, Open Graph e Twitter Card, canonical, JSON-LD `Person`, `sitemap.xml`, `robots.txt`, `lang="pt-BR"`
-- **Acessibilidade:** HTML semântico (`header`, `nav`, `main`, `section`, `article`), link "Pular para o conteúdo", foco visível, `aria-label` em botões de ícone, texto alternativo nas imagens, alvos de toque de 44 px
+- **SEO:** title e description por idioma, Open Graph (`summary_large_image`, `og.png` 1200×630) e Twitter Card, canonical, `hreflang` (`en`, `pt-BR`, `x-default`), JSON-LD `WebPage` + `Person`, `sitemap.xml` com `xhtml:link`, `robots.txt`, `<html lang>` por página
+- **Acessibilidade:** HTML semântico, link “Pular para o conteúdo” / “Skip to content”, foco visível, `aria-label` em botões de ícone, texto alternativo nas imagens, alvos de toque de 44 px, toggle de idioma com `hreflang` e `lang`
 - **Responsivo:** de 320 px a 1440 px sem rolagem horizontal
 
 ## Contato

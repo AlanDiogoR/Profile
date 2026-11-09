@@ -13,7 +13,7 @@ interface Props {
   href: string;
   variant?: Variant;
   external?: boolean;
-  download?: boolean;
+  download?: string;
   children: ReactNode;
   className?: string;
 }
@@ -24,7 +24,7 @@ export default function Button({ href, variant = 'primary', external, download, 
       href={href}
       className={`${base} ${variants[variant]} ${className}`}
       {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      {...(download ? { download: 'alan-diogo-cv.pdf' } : {})}
+      {...(download ? { download } : {})}
     >
       {children}
     </a>

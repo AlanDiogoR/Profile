@@ -1,14 +1,17 @@
 import Image from 'next/image';
+import { personName } from '../config';
+import { useI18n } from '../i18n/context';
 import Button from './Button';
-import { bio } from '../data/bio';
 
 export default function Hero() {
+  const { sections, hero } = useI18n();
+
   return (
-    <section id="inicio" aria-labelledby="inicio-titulo" className="section-anchor px-4 pb-8 pt-24 sm:px-6 md:pb-12 md:pt-28">
+    <section id={sections.home} aria-labelledby={`${sections.home}-heading`} className="section-anchor px-4 pb-8 pt-24 sm:px-6 md:pb-12 md:pt-28">
       <div className="mx-auto max-w-6xl">
         <Image
           src="/images/alan-diogo.webp"
-          alt="Retrato de Alan Diogo, de camisa preta, sobre fundo claro"
+          alt={hero.imageAlt}
           width={400}
           height={400}
           priority
@@ -17,21 +20,19 @@ export default function Hero() {
         />
 
         <h1
-          id="inicio-titulo"
+          id={`${sections.home}-heading`}
           className="mt-6 text-[2.5rem] tracking-[-0.04em] md:text-[4rem] lg:text-[4.5rem]"
         >
-          {bio.name}
+          {personName}
         </h1>
-        <p className="mt-4 max-w-2xl text-lg leading-[1.6] text-ink sm:text-xl">
-          {bio.role}. Construo APIs REST, front-ends tipados e apps mobile para problemas reais, do banco ao deploy.
-        </p>
+        <p className="mt-4 max-w-2xl text-lg leading-[1.6] text-ink sm:text-xl">{hero.lede}</p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button href="#projetos" className="w-full sm:w-auto">
-            Ver projetos
+          <Button href={`#${sections.projects}`} className="w-full sm:w-auto">
+            {hero.viewProjects}
           </Button>
-          <Button href="#contato" variant="secondary" className="w-full sm:w-auto">
-            Falar comigo
+          <Button href={`#${sections.contact}`} variant="secondary" className="w-full sm:w-auto">
+            {hero.contact}
           </Button>
         </div>
       </div>
